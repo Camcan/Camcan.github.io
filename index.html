@@ -9,10 +9,14 @@
     <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400italic,300italic,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.indigo-yellow.min.css">
-    <link href="css/home.css" rel="stylesheet">
+    <link rel="stylesheet" heref="css/barcharts.css">
+    <!-- <link href="css/home.css" rel="stylesheet"> -->
+    <link href="css/smaller.css" rel="stylesheet">
 
     <script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
     <script src="js/enquire.min.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script sync src="js/charts.js"></script>
     <script src="js/app.js"></script>
 
    </head>
@@ -44,24 +48,72 @@
         </li>
       </ul>
       <div id="social-buttons">
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect">
-          <i class="mdi mdi-linkedin"></i>
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect">
-          <i class="mdi mdi-github-circle"></i>
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect mdl-button--accent">
-          <i class="mdi mdi-twitter"></i>
-        </button>
+        <a href="https://nz.linkedin.com/in/campbell-hawkes-1b557210b">
+          <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--accent">
+            <i class="mdi mdi-linkedin"></i>
+          </button>
+        </a>
+        <a href="https://github.com/Camcan"> 
+         <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--accent">
+            <i class="mdi mdi-github-circle"></i>
+          </button> 
+        </a>
+        <a href="https://twitter.com/letters_to_cam">
+          <button  class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--accent">
+            <i class="mdi mdi-twitter"></i>
+          </button>
+        </a>
       </div>
     </div>
     <div id="content-wrapper">
       <div class="inner-content">
-        <div id="blerb" style="opacity: 1; height: 568px; padding: 0px; background: url('img/MilfordBackground.jpg') 100% 100% / 100% no-repeat fixed rgb(255, 255, 255);">
+        <div id="blerb" class="section"style="background-image: url('img/Cham-View.png')">
           <div id="blerb-text">
             <span>Cam; a web developer.
-            Based in Wellington, New Zealand.
-            Interested in involvment in social-enterprise/non-profit initiative. Inquiries always welcome.</span> 
+            Based in Wellington, New Zealand.<br>
+            Interested in involvment in social-enterprise & non-profit initiatives. <br>Inquiries always welcome.</span> 
+          </div>
+          <img src="img/Lucca-Squared.png">
+        </div>
+        <div class="section">
+          <div id="about" >
+            <div id="about-blerb">
+              <span>Exceptional growth in the craft in a supportive community.</span>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <div id="EDA">
+            <img id="dev-flag" src="img/Dev-Academy-Flag.png">
+            <div id="about-blerb">
+              <span> Enspiral Dev Academy 
+                Wellington, December 2015
+                Here students are immersed in an industry- like environment in which they are coached to thrive. The full-stacks worked with here use both Ruby and Javascript, and while it’s predominantly a coding bootcamp, the emphasis on ‘softer’ skills such as communication, self management and Agile Processes are significantly more valuable than any technical skill. Dev Academy has played a significant role in my newfound passion for constructive feedback in fuelling growth of both myself and others. 
+             Exceptional growth in the craft in a supportive community.</span>
+            </div>
+            <canvas id="countries" width="600" height="400"></canvas>
+          </div>
+        </div>
+        <div class="section">
+          <div id="contact">
+            <a href="https://www.google.co.nz/maps/place/1a%2F40+Cuba+St,+Te+Aro,+Wellington+6011/@-41.298624,174.771453,14.46z/data=!4m7!1m4!3m3!1s0x6d38afd6e247d4e7:0x39b9010743acccb8!2s1a%2F40+Cuba+St,+Te+Aro,+Wellington+6011!3b1!3m1!1s0x6d38afd6e247d4e7:0x39b9010743acccb8?hl=en">
+              <div class="detail">
+                <i class="mdi mdi-crosshairs-gps" data-animation="fadeIn"></i>
+                <span style="font-size: 12pt;">1a, 40 Cuba Street, Wellington, New Zealand</span>
+              </div>
+            </a>
+            <a href="mailto:someone@example.com">
+              <div class="detail">
+                <i class="mdi mdi-email"data-animation="fadeIn"></i>
+                <span style="font-size: 12pt;">mr.campbell.hawkes@gmail.com</span>
+              </div>
+            </a>
+            <a href="tel:+64278418623">
+              <div class="detail">
+                <i class="mdi mdi-cellphone-android" data-animation="fadeIn"></i>
+                <span style="font-size: 12pt;">0278418623</span>
+              </div>
+            </a>
           </div>
         </div>
       </div>

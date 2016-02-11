@@ -10,13 +10,10 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400italic,300italic,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.indigo-yellow.min.css">
     <link rel="stylesheet" heref="css/barcharts.css">
-    <!-- <link href="css/home.css" rel="stylesheet"> -->
     <link href="css/smaller.css" rel="stylesheet">
-
+    <link href="css/home.css" rel="stylesheet">
+    <script src="js/jquery-2.2.0.js"></script>
     <script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
-    <script src="js/enquire.min.js"></script>
-    <script src="js/Chart.min.js"></script>
-    <script sync src="js/charts.js"></script>
     <script src="js/app.js"></script>
 
    </head>
@@ -25,26 +22,18 @@
       <div id="logo-sidebar">
         <a href=""><img src="img/logo-white.png"></a>
       </div>
-      <ul id="sidebar-nav" class="">
-        <li class="">
-          <a href="">
-            Home
-          </a>
-        </li>
-        <li id="" class="">
-          <a href="">
-            About Me
-          </a>
-        </li>
-        <li id="" class="">
-          <a href="">
-            Portfolio
-          </a>
-        </li>
-        <li id="" class="">
+      <ul id="sidebar-nav" class=""> 
+        <li id="contact-btn" class="">
           <a href="">
             Contact
           </a>
+          <script>
+            $("#contact-btn").click(function(){
+              var content = $("body");
+              var target = $("#contact").height();
+              content.stop().animate({ scrollTop: target }, "slow");
+            });
+            </script>
         </li>
       </ul>
       <div id="social-buttons">
@@ -66,32 +55,15 @@
       </div>
     </div>
     <div id="content-wrapper">
-      <div class="inner-content">
+      <div id="inner-content">
         <div id="blerb" class="section"style="background-image: url('img/Cham-View.png')">
+          <div id="blerb-img">
+            <img src="img/Lucca-Squared.png">
+          </div>
           <div id="blerb-text">
             <span>Cam; a web developer.
             Based in Wellington, New Zealand.<br>
             Interested in involvment in social-enterprise & non-profit initiatives. <br>Inquiries always welcome.</span> 
-          </div>
-          <img src="img/Lucca-Squared.png">
-        </div>
-        <div class="section">
-          <div id="about" >
-            <div id="about-blerb">
-              <span>Exceptional growth in the craft in a supportive community.</span>
-            </div>
-          </div>
-        </div>
-        <div class="section">
-          <div id="EDA">
-            <img id="dev-flag" src="img/Dev-Academy-Flag.png">
-            <div id="about-blerb">
-              <span> Enspiral Dev Academy 
-                Wellington, December 2015
-                Here students are immersed in an industry- like environment in which they are coached to thrive. The full-stacks worked with here use both Ruby and Javascript, and while it’s predominantly a coding bootcamp, the emphasis on ‘softer’ skills such as communication, self management and Agile Processes are significantly more valuable than any technical skill. Dev Academy has played a significant role in my newfound passion for constructive feedback in fuelling growth of both myself and others. 
-             Exceptional growth in the craft in a supportive community.</span>
-            </div>
-            <canvas id="countries" width="600" height="400"></canvas>
           </div>
         </div>
         <div class="section">

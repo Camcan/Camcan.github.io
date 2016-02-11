@@ -97,9 +97,9 @@ div.wrapper {
   margin: 0 10px;
 }
 
-.inner-content {
+#inner-content {
   position: relative;
-  margin-left: 0%;
+  margin-left: 0 ! important;
 
 }
 .section {
@@ -114,53 +114,33 @@ div.wrapper {
   background-size: cover;
 }
 
-}
 #blerb {
-
+  margin-left: 0;
+  padding-left:0;
 }
-
 #blerb-text {
   text-align: right;
-  color: yellow;
   position: relative;
-  margin: -100px 0px 0px 5%;
-  width: 60%;
+  margin: 50px 10% 0 10%;
+  width: 100%;
+  background-color:black;
 }
 
-#blerb img {
-  margin-left: 35 %;
-  margin-top: 50px;
+#blerb-img {
   border-radius: 50%;
-  position: relative;
-  width: 30%;
+  position: absolute;
+  margin-left: 0px;
+  height: 20%;
+  width: 70%;
+  margin-bottom: 50px;
 }
+#blerb-img img {
+  min-width:100px;
+  width: 200px;*/
+  /*height:200px;
+  width: 200px;*/
+} 
 
-#about {
-  position:relative;
-  background: black;
-  opacity: 1; 
-  height: 600px; 
-  padding-top: 200px; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-#about-blerb {
-  color: rgba(225, 225, 225, 0.87);
-  margin-left: 10%;
-  width: 60%;
-}
-
-#dev-flag {
-  margin-top: -20%;
-  margin-bottom: -17%;
-  margin-left: 7%;
-  position: relative;
-  width: 20%;
-  width: 7%;
-}
 
 #contact {
   color:white;
@@ -168,9 +148,7 @@ div.wrapper {
   position: relative;
   margin-left:10%;
 }
-#contact a {
 
-}
 .detail {
 
   width: 100%;

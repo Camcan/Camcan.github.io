@@ -57,16 +57,13 @@
     height:400px;
     background-color: black;
   }
-  #sidebar-nav {
-    width:100%; 
+  #sidebar-nav { 
     text-align: center;
-    margin-top: 0                   px;
+    margin-top: 0px;
     margin-bottom: 50px;
   }
   #sidebar-nav li {
     list-style: none;
-    position:center;
-    text-align: center;
     display:inline;
     margin-bottom: 5%;
     margin-top: 5%;
@@ -239,15 +236,17 @@
     background-color: black;
   }
   #sidebar-nav {
-    margin: 50px 0 200px
+    margin: 50px 0 200px;
+    text-align: center;
+    padding: 0px;
 
   }
   #sidebar-nav li {
     list-style: none;
-    text-align: center;
+    display: center;
     display:inline;
     margin-top: 5%;
-    margin-left:5%; 
+    margin-left: 0; 
     width: 100%;
     margin-bottom: 5%; 
   }
@@ -277,15 +276,14 @@
     position: relative;
     margin-left: 20%;
     margin-right: 0px;
-
-
   }
+
   .section {
      position:relative;
     background: black;
     opacity: 1; 
-    height: 600px; 
-    padding-top: 200px; 
+    height: 500px; 
+    padding-top: 100px; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -304,11 +302,12 @@
   }
 
   #blerb img {
+    margin-top:   0px;
     margin-left: 60%;
     margin-right:5%;
     border-radius: 50%;
     position: absolute;
-    width: auto;
+    max-width: 300px;
     z-index: 2;
   }
   

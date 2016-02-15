@@ -17,6 +17,21 @@
 
    </head>
    <body>
+    <div id="page-load" class="loaded"></div>
+     <script> 
+      $(window).load(function() {
+        $("#page-load").delay(800).fadeOut("slow");
+
+      });
+        $(document).ready(function(){
+          $("#contact-btn").click(function(event){
+            event.preventDefault();
+            $('html, body').animate({
+            scrollTop: $("#contact").offset().top
+            }, 2000);
+          });
+        });
+     </script>
     <div id="sidebar">
       <div id="logo-sidebar">
         <a href=""><img src="img/logo-white.png"></a>
@@ -25,14 +40,7 @@
         <li id="contact-btn" class="">
           <a href="">
             Contact
-          </a>
-          <script>
-            $("#contact-btn").click(function(){
-              var content = $("body");
-              var target = $("#contact").height();
-              content.stop().animate({ scrollTop: target }, "slow");
-            });
-            </script>
+          </a>  
         </li>
       </ul>
       <div id="social-buttons">
@@ -58,35 +66,73 @@
         <div id="blerb" class="section"style="background-image: url('img/Cham-View.png')">
         
             <img src="img/Lucca-Squared.png">
-          <div id="blerb-text">
-            <span>Cam; a web developer.
-            Based in Wellington, New Zealand.<br>
-            Interested in involvment in social-enterprise & non-profit initiatives. <br>Inquiries always welcome.</span> 
+          <h2 id="blerb-text"> A web developer based in Wellington, New Zealand.<br>Inquiries welcome. 
+          </h2>
+        </div>
+        <div class="section" id="about">
+            
+          <div class="bio-text">
+            <p>New Section. Such section.</p>
+          </div>
+          <div class="linebreak " style="height:30px;">
+          </div>
+          <div id="about-img-container">
+              <img class="profile-img" src="http://oshine.brandexponentscr.netdna-cdn.com/oshin/v12/wp-content/uploads/sites/12/2013/11/oshin_light_fashion-0018-comp-650x650.jpg" alt="oshin_light_fashion-0018-comp">
+          </div>    
+        
+          <div class="skill-container">
+            <div class="skill-wrap">
+              <span  style="color: #ffffff">Photoshop</span>
+              <div class="skill-bar" >
+                <div id="photoshop-ability" class="ability" ></div>
+              </div>
+            </div><div class="skill-wrap">
+              <span style="color: #ffffff">HTML/CSS</span>
+              <div class="skill-bar" >
+                <div id="htmlcss-ability" class="ability"></div>
+              </div>
+            </div>
+            <div class="skill-wrap">
+              <span style="color: #ffffff">Javascript/Node.js</span>
+              <div class="skill-bar">
+                <div id="javascript-ability" class="ability"></div>
+              </div>
+            </div>
+            <div class="skill-wrap">
+              <span style="color: #ffffff">Ruby/Rails</span>
+              <div class="skill-bar">
+                <div id="ruby-ability" class="ability"></div>
+              </div>
+            </div>
+            <div class="skill-wrap">
+              <span style="color: #ffffff">SQL</span>
+              <div class="skill-bar">
+                <div id="sql-ability" class="ability"></div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="section">
-          <div id="contact">
-            <a href="https://www.google.co.nz/maps/place/1a%2F40+Cuba+St,+Te+Aro,+Wellington+6011/@-41.298624,174.771453,14.46z/data=!4m7!1m4!3m3!1s0x6d38afd6e247d4e7:0x39b9010743acccb8!2s1a%2F40+Cuba+St,+Te+Aro,+Wellington+6011!3b1!3m1!1s0x6d38afd6e247d4e7:0x39b9010743acccb8?hl=en">
-              <div class="detail">
-                <i class="mdi mdi-crosshairs-gps" data-animation="fadeIn"></i>
-                <span style="font-size: 12pt;">1a, 40 Cuba Street, Wellington, New Zealand</span>
-              </div>
-            </a>
-            <a href="mailto:someone@example.com">
-              <div class="detail">
-                <i class="mdi mdi-email"data-animation="fadeIn"></i>
-                <span style="font-size: 12pt;">mr.campbell.hawkes@gmail.com</span>
-              </div>
-            </a>
-            <a href="tel:+64278418623">
-              <div class="detail">
-                <i class="mdi mdi-cellphone-android" data-animation="fadeIn"></i>
-                <span style="font-size: 12pt;">0278418623</span>
-              </div>
-            </a>
-          </div>
+        <div id="contact" class="section">
+          <a href="https://www.google.co.nz/maps/place/1a%2F40+Cuba+St,+Te+Aro,+Wellington+6011/@-41.298624,174.771453,14.46z/data=!4m7!1m4!3m3!1s0x6d38afd6e247d4e7:0x39b9010743acccb8!2s1a%2F40+Cuba+St,+Te+Aro,+Wellington+6011!3b1!3m1!1s0x6d38afd6e247d4e7:0x39b9010743acccb8?hl=en">
+            <div class="detail">
+              <i class="mdi mdi-crosshairs-gps" data-animation="fadeIn"></i>
+              <span style="font-size: 12pt;">1a, 40 Cuba Street, Wellington, New Zealand</span>
+            </div>
+          </a>
+          <a href="mailto:someone@example.com">
+            <div class="detail">
+              <i class="mdi mdi-email"data-animation="fadeIn"></i>
+              <span style="font-size: 12pt;">mr.campbell.hawkes@gmail.com</span>
+            </div>
+          </a>
+          <a href="tel:+64278418623">
+            <div class="detail">
+              <i class="mdi mdi-cellphone-android" data-animation="fadeIn"></i>
+              <span style="font-size: 12pt;">0278418623</span>
+            </div>
+          </a>
         </div>
       </div>
     </div>
-   </body>
+  </body>
 </html>

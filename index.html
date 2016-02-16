@@ -19,18 +19,18 @@
    <body>
     <div id="page-load" class="loaded"></div>
      <script> 
+      $(document).ready(function(){
+        $("#contact-btn").click(function(event){
+          event.preventDefault();
+          $('html, body').animate({
+          scrollTop: $("#contact").offset().top
+          }, 1300);
+        });
+      });
       $(window).load(function() {
         $("#page-load").fadeOut("slow");
 
       });
-        $(document).ready(function(){
-          $("#contact-btn").click(function(event){
-            event.preventDefault();
-            $('html, body').animate({
-            scrollTop: $("#contact").offset().top
-            }, 2000);
-          });
-        });
      </script>
     <div id="sidebar">
       <div id="logo-sidebar">

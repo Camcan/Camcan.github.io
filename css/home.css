@@ -64,6 +64,9 @@
     width: 100%;
     height:400px;
     background-color: black;
+    box-shadow: 1px right;
+    z-index: 1;
+
   }
   #sidebar-nav { 
     text-align: center;

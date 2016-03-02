@@ -12,12 +12,8 @@ $(document).ready(function(){
   });
   $('#blerb')
     .mousemove(function(e){
-      var moveX = (-(e.pageX)/ 30);
-      var moveY = (-(e.pageY)/ 60);
-      $(this).css('background-position', moveX + 'px ');
+      var moveX = (-(e.pageX)/ 80);
+      $(this).css('background-position', moveX + 'px');
     })
-    .mouseleave(function() {
-      $(this).css('background-position', '0px 0px')
-    });
 });
 

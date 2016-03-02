@@ -68,7 +68,7 @@
   #sidebar-nav {
     width:100%; 
     text-align: center;
-    margin-top: 0                   px;
+    margin-top: 0;
     margin-bottom: 50px;
   }
   #sidebar-nav li {
@@ -118,7 +118,7 @@
     background: black;
     opacity: 1; 
     height: 600px; 
-    padding-top: 100px; 
+    /*padding-top: 100px; */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -136,7 +136,7 @@
     margin: 0px 10% 0px 10%;
     width: 80%;
     max-height: 80%;
-    background-color:black;
+    /*background-color:black;*/
   }
 
   
@@ -235,10 +235,7 @@
   }
   
 
-/* The element to apply the animation to */
 
-
-/*========================================================*/
 
 
 
@@ -355,12 +352,11 @@
 
 
   #blerb-text {
-    background-color: black;
-    text-align: right;
+    text-align: center;
     color: yellow;
     position: absolute;
-    margin:100px 0px 0px 10%;
-
+    margin:100px 0px 2% 10%;
+    bottom: 0;
     width: 40%;
   }
 

@@ -151,7 +151,19 @@
     /*height:200px;
     width: 200px;*/
   } 
+  #EDA {
+    margin-left: 10%;
+    width: 60%;
+    color: white;
+  }
+  #dev-flag {
+    margin-top: -20%;
+    margin-bottom: -10%;
+    margin-left: -5%;
+    position: relative;
+    width: 20%;
 
+  }
 
   #contact {
     text-align: left;
@@ -170,14 +182,11 @@
     text-align:center;
   }
 
-  .detail i {
-    
+  .detail i {   
     width:10%;
     margin-left: 45%;
     margin-right: 45%;
     margin-bottom: 20px;
-
-
   }
 
   #about{

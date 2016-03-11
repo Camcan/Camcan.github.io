@@ -117,6 +117,7 @@
     background: black;
     opacity: 1; 
     height: 600px; 
+    margin-bottom: 0px;
     /*padding-top: 100px; */
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -132,7 +133,8 @@
     text-align: right;
     color: yellow;
     position: relative;
-    margin: 0px 10% 0px 10%;
+    margin: 0px 10% 10px 10%;
+
     width: 80%;
     max-height: 80%;
     /*background-color:black;*/
@@ -143,14 +145,13 @@
     position: relative;
     border-radius: 50%;
     min-width:100px;
-    width: 200px;
     width:60%;
     margin-left: 20%;
     margin-bottom: 20%;
-    /*height:200px;
-    width: 200px;*/
+
   } 
   #EDA {
+    margin-top: 50px;
     margin-left: 10%;
     width: 60%;
     color: white;
@@ -312,11 +313,11 @@
   }
 
   #blerb img {
-    margin-left: 60%;
+    margin-left: 55%;
     margin-right:5%;
+    width: 40%;
     border-radius: 50%;
     position: absolute;
-    width: auto;
     z-index: 2;
   }
   

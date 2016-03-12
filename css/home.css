@@ -34,19 +34,15 @@
     /*color: #e9f936;*/
     text-decoration: none; 
   }
-  div.wrapper {
-    margin: 20px auto;
-    width: 350px;
-  }
 
   #page-load  {
-   position: fixed;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  height: 100%;
-  z-index: 5;
-  background: url(../img/octocat-spinner.gif) center no-repeat black;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background: url(../img/octocat-spinner.gif) center no-repeat black;
   }
 
 
@@ -148,18 +144,20 @@
     width:60%;
     margin-left: 20%;
     margin-bottom: 20%;
-
   } 
+
   #EDA {
     margin-top: 50px;
     margin-left: 10%;
     width: 60%;
     color: white;
   }
+
   #dev-flag {
     margin-top: -20%;
     margin-bottom: -10%;
     margin-left: -5%;
+    margin-right: -15%;
     position: relative;
     width: 20%;
 

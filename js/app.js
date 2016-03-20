@@ -1,19 +1,31 @@
-
 $(window).load(function() {
-  $("#page-load").delay(800).fadeOut("slow");
-
+  $("#page-overlay").delay(800).fadeOut("slow")
 });
 $(document).ready(function(){
-  $("#contact-btn").click(function(event){
-    event.preventDefault();
-    $('html, body').animate({
-      scrollTop: $("#contact").offset().top
-    }, 2000);
-  });
   $('#blerb')
     .mousemove(function(e){
-      var moveX = (-(e.pageX)/ 80);
-      $(this).css('background-position', moveX + 'px');
+      var moveX = (-(e.pageX)/ 80)
+      $(this).css('background-position', moveX + 'px')
     })
+  $("#contact-btn")
+    .click(function(event){
+      event.preventDefault()
+      $('html, body').animate({
+        scrollTop: $("#contact").offset().top
+      }, 2000);
+    })
+  $("#CV-btn")
+    .click(function(event){
+      event.preventDefault()
+      $("#CV-lightbox").css("visibility", "visible")
+      $("#page-overlay").css("background", "rgba(0,0,0,0.8)").fadeIn("slow")
+      $(document)
+        .mouseup(function (e){
+          var lightbox = $("#CV-lightbox iframe"); 
+          if (!lightbox.is(e.target)) {
+            $("#page-overlay").fadeOut("slow");
+          }
+        })
+  })  
 });
 

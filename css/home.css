@@ -3,7 +3,6 @@
       margin: 0;
       padding: 0;
       outline: none;
-      
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box;
@@ -35,7 +34,8 @@
     text-decoration: none; 
   }
 
-  #page-load  {
+
+  #page-overlay {
     position: fixed;
     left: 0px;
     top: 0px;
@@ -43,6 +43,29 @@
     height: 100%;
     z-index: 5;
     background: url(../img/octocat-spinner.gif) center no-repeat black;
+  }
+  #CV-lightbox {
+    position: fixed;
+    color: white;
+    visibility: hidden;
+    margin-top: -300px;
+    margin-bottom: 50px;
+    width: 90%;
+    height: 100%;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+  
+  #CV-lightbox h2 {
+    color: white;
+    margin-top: 40%;
+    height: 20%;
+  }
+  #CV-lightbox iframe {
+    margin-top: -60%;
+    width: 100%;
+    max-height: 600px;
+    min-height: 400px;
   }
 
 
@@ -55,6 +78,7 @@
   }
 
   #sidebar {
+    z-index: 0;
     margin-bottom: 0;
     position: relative;
     width: 100%;
@@ -114,7 +138,6 @@
     opacity: 1; 
     height: 600px; 
     margin-bottom: 0px;
-    /*padding-top: 100px; */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -155,7 +178,7 @@
 
   #dev-flag {
     margin-top: -20%;
-    margin-bottom: -10%;
+    margin-bottom: -5%;
     margin-left: -5%;
     margin-right: -15%;
     position: relative;
@@ -187,6 +210,12 @@
     margin-bottom: 20px;
   }
 
+  #footer {
+    height: 12px;
+    padding-left: 20%;
+    text-align: left;  
+    color: black;  
+  }
 
 
 @media only screen and (min-width: 500px) {
@@ -225,19 +254,31 @@
     /*color: #e9f936;*/
     text-decoration: none; 
   }
-  div.wrapper {
-    margin: 20px auto;
-    width: 350px;
+
+
+   #CV-lightbox {
+    color: white;
+    visibility: hidden;
+    height: 90%;
+    width: 60%;
+    margin-top: 5%;
+    margin-right: 20%;
+    margin-left: 20%;
   }
-
-
+  #CV-lightbox iframe {
+    height: 100%;
+  }
+  #CV-lightbox h2 {
+    height: 10%;
+    margin-bottom: -50%;
+  }
+  
 
   #logo-sidebar a {
     width: 100%;
   }
   #logo-sidebar img{
     width: 100%;
-    /*margin-left: 10%;*/
   }
 
   #sidebar {
@@ -313,6 +354,8 @@
   #blerb img {
     margin-left: 55%;
     margin-right:5%;
+    max-height: 600px;
+    max-width: 600px;
     width: 40%;
     border-radius: 50%;
     position: absolute;
@@ -341,26 +384,6 @@
     margin-bottom: 0px;
 
   }
-  #about {
-    height: 800px;
-  }
-   #about-img-container {
-    width:30%;
-    height: 50%;
-    background-color: black;
 
-
-  }
-  .profile-img {
-    min-width: 90px;
-    max-width: 500px;
-   }
-  .skill-container {
-    position: absolute;
-    margin-left: 50%;
-    margin-top: -20%;
-    margin-bottom: 50%;
-    width: 40%;
-    }
 
 }

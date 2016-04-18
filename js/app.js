@@ -130,26 +130,20 @@ $(document).ready(function(){
   }
 
   function createClickEvent(key){
-    var toToggle = sections[key]
+    console.log("CreateClickEvent: ", key)
     $('#' + key + '-link').on('click', function(){
-      var display = toToggle.display
+      var toToggle = sections[key]
       console.log(toToggle.name + " clicked")
       console.log(display)
-      if (display == true) {
-        display = false
-      } else {
-        display = true
-      }
-      console.log( display)
-      for (var sec in sections){
-        console.log("Sections: ", sections[sec].name, "Toggling: ", toToggle.name )
-        if (sections[sec].name === toToggle.name){
-          console.log("Not Toggling", sections[sec].name)
-          sections[sec].display = display
-        } else {
-          sections[sec].display = false
-        }
-      }
+      var display =! toToggle.display
+      // if (display == true) {
+      //   display = false
+      // } else {
+      //   display = true
+      // }
+      console.log(display)
+      sections[key].display = display
+     
       reveal(sections)
 
     })

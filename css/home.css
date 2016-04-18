@@ -9,7 +9,7 @@
   }
 
   body {
-      background: #000;
+      background: #000 url("../img/Cham-View.png") no-repeat right top;
       color: #eee;
       -webkit-font-smoothing: antialiased;
       font-family: sans-serif;;

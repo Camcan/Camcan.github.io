@@ -96,14 +96,8 @@ $(document).ready(function(){
     }
   }
   
-  var toDisplay = {
-    RoR: false,
-    js: false
-  }
-
-  var sectionToggle = function(sections){
+  var reveal = function(sections){
     for (key in sections) {
-      console.log(sections[key].name)
       if (sections[key].display === false){
         $('#' + sections[key].name).fadeOut()
       } else {
@@ -114,39 +108,53 @@ $(document).ready(function(){
 
   $('#portfolio-link')
     .click(function(){
-      toDisplay = {
-        RoR: true,
-        js: true
+      var allPortfolio = function(){
+        var toReturn = false
+        for (var key in sections) {
+          if (sections[key].display == false){
+            toReturn = true 
+          } 
+        }
+        return toReturn
+      }()
+      for (var key in sections) {
+        console.log("Opening portfolio")
+        sections[key].display = allPortfolio
       }
-      sectionToggle(toDisplay)
+      reveal(sections)
     })
-  $('#nodejs-link').on('click', function(){
-      var display = sections.js.display
-      if (display === true) {
+
+  for (var key in sections) {
+    console.log("CreateClickEvent: ", key)
+    createClickEvent(key)
+  }
+
+  function createClickEvent(key){
+    var toToggle = sections[key]
+    $('#' + key + '-link').on('click', function(){
+      var display = toToggle.display
+      console.log(toToggle.name + " clicked")
+      console.log(display)
+      if (display == true) {
         display = false
       } else {
         display = true
       }
-      sections.js.display = display
-      console.log(sections.js.display)
-      sections.RoR.display = false
-      sectionToggle(sections)
-    })
-  $('#RoR-link')
-    .on('click', function(){
-      console.log("RoR Clicked")
-      var display = sections.RoR.display
-      console.log(display)
-      if (display === true) {
-        display = false
-      } else {
-        display = true
+      console.log( display)
+      for (var sec in sections){
+        console.log("Sections: ", sections[sec].name, "Toggling: ", toToggle.name )
+        if (sections[sec].name === toToggle.name){
+          console.log("Not Toggling", sections[sec].name)
+          sections[sec].display = display
+        } else {
+          sections[sec].display = false
+        }
       }
-      console.log(display)
-      sections.RoR.display = display 
-      sections.js.display = false
-      sectionToggle(sections)
+      reveal(sections)
+
     })
+  }
+
 
 
 

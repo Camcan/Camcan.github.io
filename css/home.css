@@ -81,10 +81,6 @@
     align-content: center;
 
   }
-  
-  #content, #return {
-    display: none;
-  }
 
 
   #content {
@@ -93,8 +89,10 @@
   }
 
   .folio-section {
+    background: red;
     display: hidden;
-    height: 300px
+    height: 300px;
+    width: 500px;
   }
 
   .item {
@@ -103,6 +101,10 @@
 
 
   #footer {
+  }
+
+  #content, #return {
+    display: none;
   }
 
 

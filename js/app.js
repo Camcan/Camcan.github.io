@@ -11,8 +11,6 @@ $(document).ready(function(){
 
   function typeText(elementId, string, start, callback) {
     if (string) {
-
-      console.log("Run: " + start)
       var text = string.slice(0, ++start)
 
       document.getElementById(elementId).innerHTML = "<h2>" + text + "</h2>"
@@ -25,7 +23,6 @@ $(document).ready(function(){
         isTag = false
       }
       if (isTag === false) {
-        console.log("FALSY")
         return callback()
       }
 
@@ -38,22 +35,28 @@ $(document).ready(function(){
       $('#content').fadeIn()
   }
 
-  typeText('typed-title', title, 0,
-   showAll
-  )
+  typeText('typed-title', title, 0, showAll)
 
   for(var key in sections){
     loadSection(sections[key])
   }
 
   var sections = {
+    EDA: {
+      display: false,
+      name: "EDA",
+      items: [
+        {id:"1st Item",
+        img: "img/Dev-Academy-Flag.png",
+        }
+      ],
+      details: {}
+    },
     RoR: {
       display: false,
       name: 'RoR-portfolio',
       items: [
-        [],
-        [],
-        []
+        {},
       ],
       details: {},
     },
@@ -61,16 +64,7 @@ $(document).ready(function(){
       display: false,
       name: 'js-portfolio',
       items: [
-        {
-          id: 'first-photo',
-          background: "image "
-
-        },
-        {
-          id: 'second-photo',
-          // background: 
-        },
-        
+        {},
       ],
       details: {},
     }
@@ -80,21 +74,38 @@ $(document).ready(function(){
     $('#'+elementId).addClass(newClass)
   }
 
- 
-  var loadTemplate = function(template, details) {
-    $.get((template.name + '.html'), function(temp) {
-      var htmlString = Mustache.render(temp, details)
-      $('#'+ template.name).html(htmlString)
+  var loadHtmlString = function(template, details){
+    $.get(("partials/" + template + '.html'), function(temp) {
+      return Mustache.render(temp, details)
     })
+   }
+
+  var loadTemplate = function(template, details, target) {
+    var htmlString = loadHtmlString(template, details)
+
+    $('#'+ target).html(htmlString)
   }
 
   var loadSection = function(section){
-    loadTemplate(section.name, section.xtra)
-    for (i in section.items) {
-      var item = item[i] 
-      getTemplateString("item", item.content)
+    loadTemplate("section", section.details, section.name)
+    function contentsString(){
+      var contents = ""
+      for (i in section.items) {
+        var item = item[i] 
+        contents.concat(loadHtmlString("item", item.details))
+      }
+      return contents
+    }
+    $('#'+ section.name + " .contents").html(contentsString)
+
+  }
+
+  var loadAll = function(sectionsObj){
+    for (var key in sectionsObj){
+      loadSection(sectionsObj[key])
     }
   }
+  loadAll(sections)
   
   var reveal = function(sections){
     for (key in sections) {
@@ -125,22 +136,14 @@ $(document).ready(function(){
     })
 
   for (var key in sections) {
-    console.log("CreateClickEvent: ", key)
     createClickEvent(key)
   }
 
   function createClickEvent(key){
-    console.log("CreateClickEvent: ", key)
     $('#' + key + '-link').on('click', function(){
       var toToggle = sections[key]
       console.log(toToggle.name + " clicked")
-      console.log(display)
       var display =! toToggle.display
-      // if (display == true) {
-      //   display = false
-      // } else {
-      //   display = true
-      // }
       console.log(display)
       sections[key].display = display
      

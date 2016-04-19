@@ -9,7 +9,11 @@
   }
 
   body {
-      background: #000 url("../img/Cham-View.png") no-repeat right top;
+      background: url(../img/b&w-scratch-texture.bmp) no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
       color: #eee;
       -webkit-font-smoothing: antialiased;
       font-family: sans-serif;;
@@ -37,6 +41,20 @@
 
   a .open {
     color:  #d3d3d3;
+  }
+
+  .indent {
+    margin-left: 10%;
+  }
+  .inner-shadow {
+    -webkit-box-shadow: inset 10px 10px 30px 0px rgba(0,0,0,0.57);
+    -moz-box-shadow: inset 10px 10px 30px 0px rgba(0,0,0,0.57);
+    box-shadow: inset 10px 10px 30px 0px rgba(0,0,0,0.57);
+  }
+  .drop-shadow {
+    -webkit-box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.57);
+    -moz-box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.57);
+    box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.57);
   }
 
 
@@ -75,31 +93,55 @@
   #header {
     height: 200px;
   }
+
   #typed-title, #return {
     height: 50px;
-    margin-left: 10%;
-    align-content: center;
-
   }
+
 
 
   #content {
-    margin-left: 20%;
+    margin: 0%;
+    margin-left: 10%;
     align-self: flex-end;
   }
+  
 
-  .folio-section {
-    background: red;
+  .section {
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: space-around;
+    background: url(../img/b&w-scratch-texture.bmp) no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+    background-size: cover;
+    min-height: 200px;
+    width: 100%;
     display: none;
-    height: 300px;
-    width: 500px;
   }
 
   .item {
     size: 200px ;
   }
 
+  #contact-buttons h2 {
+    width: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  #contact-buttons i {
+    font-size: 30px;
+  }
+  #contact-buttons{
+    margin: 0 0 20px 5%;
+    width: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    
 
+  }
   #footer {
   }
 

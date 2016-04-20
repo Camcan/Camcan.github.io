@@ -108,11 +108,22 @@ $(document).ready(function(){
   loadAll(sections)
   
   var reveal = function(sections){
+    var adjusted = false
     for (key in sections) {
+      var secName = sections[key].name
       if (sections[key].display === false){
-        $('#' + sections[key].name).fadeOut()
+        $('#' + secName)
+        .addClass('hidden')
       } else {
-        $('#' + sections[key].name).fadeIn()
+        $('#' + secName)
+          .removeClass('hidden')
+        if (adjusted == false){
+          adjusted = true
+          $('html, body')
+            .animate({
+              scrollTop: $('#' + secName).offset().top - 100
+          }, 1500);
+        }
       }
     }
   }
@@ -122,15 +133,20 @@ $(document).ready(function(){
       var allPortfolio = function(){
         var toReturn = false
         for (var key in sections) {
-          if (sections[key].display == false){
+          if (key !== 'EDA' && sections[key].display == false){
             toReturn = true 
+
           } 
         }
         return toReturn
       }()
+      console.log("It's " + allPortfolio)
       for (var key in sections) {
         console.log("Opening portfolio")
-        sections[key].display = allPortfolio
+        if(key !== 'EDA'){
+          console.log("Not EDA")
+          sections[key].display = allPortfolio
+        }
       }
       reveal(sections)
     })

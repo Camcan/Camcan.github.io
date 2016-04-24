@@ -32,6 +32,7 @@ $(document).ready(function(){
 
   var showAll = function(){
       $('#return').show()
+      $('#profile-img').show().css('display', 'flex')
       $('#content').fadeIn()
   }
 
@@ -76,54 +77,65 @@ $(document).ready(function(){
 
   var loadHtmlString = function(template, details){
     $.get(("partials/" + template + '.html'), function(temp) {
+      console.log("htmlString:", temp)
       return Mustache.render(temp, details)
+      //WORKING
     })
    }
 
-  var loadTemplate = function(template, details, target) {
+  var renderTemplate = function(htmlString, target) {
+       console.log("We have a template:", template, "Some details:", details, "And a target:", target)
     var htmlString = loadHtmlString(template, details)
-
+    
     $('#'+ target).html(htmlString)
   }
 
   var loadSection = function(section){
-    loadTemplate("section", section.details, section.name)
-    function contentsString(){
+    console.log("Section name: " + section.name)
+    var sectionTemp = loadHtmlString("section", section.details)
+    contentsString= function(){
+         console.log("Retrieving Contents... " )
       var contents = ""
       for (i in section.items) {
-        var item = item[i] 
-        contents.concat(loadHtmlString("item", item.details))
+        var item = section.items[i] 
+        console.log("This is an item: " + item)
+        // contents = contents.concat(loadHtmlString("item", {"Heh"}))
       }
       return contents
     }
-    $('#'+ section.name + " .contents").html(contentsString)
+    var toRender = Mustache.render(sectionTemp, contentsString())
+    $('#'+ section.name + " .contents").html(toRender)
 
   }
 
   var loadAll = function(sectionsObj){
     for (var key in sectionsObj){
+         console.log("This is a section being loaded: " + key)
       loadSection(sectionsObj[key])
     }
   }
-  loadAll(sections)
+  // loadAll(sections)
   
-  var reveal = function(sections){
+  var reveal = function(altered, keys){
     var adjusted = false
-    for (key in sections) {
+    for(var key in keys) {
+      key = keys[i]
       var secName = sections[key].name
-      if (sections[key].display === false){
+      if (altered[key].display === false){
         $('#' + secName)
-        .addClass('hidden')
+          .addClass('hidden')
+        sections[key].display = false
       } else {
+        adjusted = true
         $('#' + secName)
           .removeClass('hidden')
-        if (adjusted == false){
-          adjusted = true
-          $('html, body')
-            .animate({
-              scrollTop: $('#' + secName).offset().top - 100
-          }, 1500);
-        }
+        sections[key].display = true
+      }
+      if (adjusted == true){
+        $('html, body')
+          .animate({
+            scrollTop: $('#' + secName).offset().top 
+        }, 1500);
       }
     }
   }
@@ -135,7 +147,6 @@ $(document).ready(function(){
         for (var key in sections) {
           if (key !== 'EDA' && sections[key].display == false){
             toReturn = true 
-
           } 
         }
         return toReturn
@@ -152,19 +163,27 @@ $(document).ready(function(){
     })
 
   for (var key in sections) {
-    createClickEvent(key)
+     createClickEvent(key, [key])
   }
+  createClickEvent('portfolio', ["js", "RpR"])
 
-  function createClickEvent(key){
-    $('#' + key + '-link').on('click', function(){
-      var toToggle = sections[key]
-      console.log(toToggle.name + " clicked")
-      var display =! toToggle.display
-      console.log(display)
-      sections[key].display = display
-     
-      reveal(sections)
-
+  function createClickEvent(target, keys){
+    $('#' + target + '-link').on('click', function(){
+  
+      var toAdjust = sections
+      function adjust(obj){
+        for(var i in keys) {
+          var key = keys[i]
+          console.log(sections[key].display)
+          var oldVal = sections[key].display
+          obj[key].display =! oldVal
+        if (i = keys.length) {
+        console.log("OOOORLO") 
+            return toAdjust
+          }
+        }
+      }
+      reveal(adjust(toAdjust),  keys)
     })
   }
 
@@ -186,7 +205,7 @@ $(document).ready(function(){
         scrollTop: $('#contact').offset().top
       }, 2000);
     })
-  $('#CV-btn')
+  $('#CV-lb-btn')
     .click(function(event){
       event.preventDefault()
       $('#CV-lightbox').css('visibility', 'visible')

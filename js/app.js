@@ -31,9 +31,13 @@ $(document).ready(function(){
   }
 
   var showAll = function(){
-      $('#return').show()
-      $('#profile-img').show().css('display', 'flex')
-      $('#content').fadeIn()
+      $('#return')
+        .show()
+      $('#profile-img')
+        .show()
+        .css('display', 'flex')
+      $('#content')
+        .fadeIn()
   }
 
   typeText('typed-title', title, 0, showAll)
@@ -43,6 +47,10 @@ $(document).ready(function(){
   }
 
   var sections = {
+    web:{
+      display: false,
+      name: "web",
+    },
     EDA: {
       display: false,
       name: "EDA",
@@ -90,24 +98,31 @@ $(document).ready(function(){
     $('#'+ target).html(htmlString)
   }
 
-  var loadSection = function(section){
+  loadSection = function(section){
     console.log("Section name: " + section.name)
-    var sectionTemp = loadHtmlString("section", section.details)
-    contentsString= function(){
+    var sectionTemp = function(){
+      loadHtmlString("section", section.details)
+    }()
+    console.log("Loaded string..")
+    var contentsObj= function(){
          console.log("Retrieving Contents... " )
       var contents = ""
-      for (i in section.items) {
+      for (var i = 0; i < section.items.length; i++) {
         var item = section.items[i] 
         console.log("This is an item: " + item)
-        // contents = contents.concat(loadHtmlString("item", {"Heh"}))
+        contents = contents.concat(loadHtmlString("item", {i: 1}))
       }
-      return contents
+        return contents// .then( function(){
+        //   return {contents:contents}
+        // })
+    }()
+    var toRender = function(){
+      Mustache.render(sectionTemp, {contents:contentsObj})
+      $('#'+ section.name + " .contents").html(toRender())
     }
-    var toRender = Mustache.render(sectionTemp, contentsString())
-    $('#'+ section.name + " .contents").html(toRender)
-
+    toRender()
   }
-
+  // loadSection(sections["EDA"])
   var loadAll = function(sectionsObj){
     for (var key in sectionsObj){
          console.log("This is a section being loaded: " + key)
@@ -140,27 +155,33 @@ $(document).ready(function(){
     }
   }
 
-  $('#portfolio-link')
-    .click(function(){
-      var allPortfolio = function(){
-        var toReturn = false
-        for (var key in sections) {
-          if (key !== 'EDA' && sections[key].display == false){
-            toReturn = true 
-          } 
-        }
-        return toReturn
-      }()
-      console.log("It's " + allPortfolio)
-      for (var key in sections) {
-        console.log("Opening portfolio")
-        if(key !== 'EDA'){
-          console.log("Not EDA")
-          sections[key].display = allPortfolio
-        }
-      }
-      reveal(sections)
-    })
+  // $('#portfolio-link')
+  //   .click(function(){
+  //     var toAlter = []
+  //     console.log(toAlter)
+  //     var allPortfolio = function(){
+  //       var toReturn = false
+  //       for (var key in sections) {
+  //         if (key !== 'EDA' && sections[key].display == false){
+  //           console.log("No bueno")
+  //           toReturn = true 
+  //         } 
+  //       }
+  //       return toReturn
+  //     }
+  //     allPortfolio = allPortfolio()
+  //     console.log("It's " + allPortfolio)
+  //     for (var key in sections) {
+  //       if(key !== 'EDA'){
+  //         console.log(key)
+  //         sections[key].display = allPortfolio
+  //         toAlter = toAlter.concat([key])
+  //         console.log(toAlter)
+  //       }
+  //     }
+  //     reveal(sections, toAlter)
+  //     console.log("Oops I ran")
+  //   })
 
   for (var key in sections) {
      createClickEvent(key, [key])
@@ -177,13 +198,12 @@ $(document).ready(function(){
           console.log(sections[key].display)
           var oldVal = sections[key].display
           obj[key].display =! oldVal
-        if (i = keys.length) {
-        console.log("OOOORLO") 
-            return toAdjust
-          }
+          console.log(i)
+          console.log(keys.length-1)
         }
       }
-      reveal(adjust(toAdjust),  keys)
+      adjust(toAdjust)
+      reveal(toAdjust,  keys)
     })
   }
 

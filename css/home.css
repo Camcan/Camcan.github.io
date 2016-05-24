@@ -78,34 +78,7 @@
     background:yellow;
     border: none;
     border-radius: 5px;
-    margin-right: 20px;
-    &:active {
-      @include shadow-4dp();
-      background-color: $button-active-color;
-  transition: box-shadow 0.2s $animation-curve-fast-out-linear-in,
-    };
-
-    color: $button-secondary-color;
-  position: relative;
-  height: $button-height;
-  margin: 0;
-  min-width: $button-min-width;
-  padding: 0 $button-padding;
-  display: inline-block;
-  @include typo-button();
-  overflow: hidden;
-  will-change: box-shadow;
-              background-color 0.2s $animation-curve-default,
-              color 0.2s $animation-curve-default;
-  outline: none;
-  cursor: pointer;
-  text-decoration: none;
-  text-align: center;
-  line-height: $button-height;
-  vertical-align: middle;
-
-  -moz-focus-inner {
-    border: 0;
+    margin: 10px;
   }
 
   :hover {
@@ -123,16 +96,22 @@
   }
   #header {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row nowrap;
     width: 100%;
+    height: auto;
   }
+  #head-left {
+    margin: 0px;
+    width: 400px;
 
+  }
   #profile-img {
     display: none;
-    align-self: center;
     width: 200px;
     height: 200px;
-    padding: -20px;
+    position: right;
+    margin: 0px;
+    margin-left: 20%;
     border-radius: 10%;
   }
 
@@ -148,6 +127,7 @@
   #return {
     margin-top: 0;
     width: 100px;
+    margin-right: 0px;
   }
 
   #content, #return {
@@ -354,7 +334,7 @@
 
 @media screen and (min-width: 650px) {
   .hover-enlarge {
-
+    display: inline-block;
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -ms-transform: scale(1);
@@ -389,7 +369,9 @@
     margin: 100px 0 0 10%;
     height: 200px;
   }
-  #profile-img {margin-left: 0;
+  #profile-img {
+    margin-top: -10%;
+    margin-left: 60%;
     /*margin-right: 10%;*/
 
   }

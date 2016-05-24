@@ -35,7 +35,7 @@ $(document).ready(function(){
         .show()
       $('#profile-img')
         .show()
-        .css('display', 'flex')
+        .css('display', 'inline-block')
       $('#content')
         .fadeIn()
   }

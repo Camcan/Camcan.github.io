@@ -1,4 +1,10 @@
-<div class="folio-section inner-shadow" id="{{title}}">
-<img src="{img-src}"> 
-<div class="contents"> </div>
+<div class="items">
+	{{#contents}}
+	<div  class="item">
+		<a href="{{link}}">
+	  		<img src="{{img}}" class="drop-shadow hover-color">
+	  	<h2 class="drop-shadow">{{title}}</h2>
+  		</a>
+	</div>
+	{{/contents}}
 </div>

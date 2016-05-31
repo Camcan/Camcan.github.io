@@ -4,7 +4,7 @@ $(window).load(function() {
 $(document).ready(function(){
   
 
-  var title = "//> Campbell_Hawkess" 
+  var title = "~$ Campbell_Hawkess" 
   var i = 0
   var isTag = true
   var text = ""
@@ -49,25 +49,22 @@ $(document).ready(function(){
   var sections = {
     web:{
       display: false,
-      name: "web",
-    },
-    EDA: {
-      display: false,
-      name: "EDA",
+      name: "web-portfolio",
       items: [
-        {id:"1st Item",
-        img: "img/Dev-Academy-Flag.png",
-        }
-      ],
-      details: {}
+        {
+          title: 'Old Personal Site',
+          img: 'img/old-site-screenshot.png',
+          link: '/in-color.html'}]
     },
     RoR: {
       display: false,
       name: 'RoR-portfolio',
       items: [
-        {},
+        {
+          title: '',
+          img: ''
+        },
       ],
-      details: {},
     },
     js: {
       display: false,
@@ -86,7 +83,7 @@ $(document).ready(function(){
   var loadHtmlString = function(template, details){
     $.get(("partials/" + template + '.html'), function(temp) {
       console.log("htmlString:", temp)
-      return Mustache.render(temp, details)
+      return temp
       //WORKING
     })
    }
@@ -94,42 +91,30 @@ $(document).ready(function(){
   var renderTemplate = function(htmlString, target) {
        console.log("We have a template:", template, "Some details:", details, "And a target:", target)
     var htmlString = loadHtmlString(template, details)
-    
+  
     $('#'+ target).html(htmlString)
   }
 
   loadSection = function(section){
     console.log("Section name: " + section.name)
-    var sectionTemp = function(){
-      loadHtmlString("section", section.details)
-    }()
-    console.log("Loaded string..")
-    var contentsObj= function(){
-         console.log("Retrieving Contents... " )
-      var contents = ""
-      for (var i = 0; i < section.items.length; i++) {
-        var item = section.items[i] 
-        console.log("This is an item: " + item)
-        contents = contents.concat(loadHtmlString("item", {i: 1}))
-      }
-        return contents// .then( function(){
-        //   return {contents:contents}
-        // })
-    }()
-    var toRender = function(){
-      Mustache.render(sectionTemp, {contents:contentsObj})
-      $('#'+ section.name + " .contents").html(toRender())
+    console.log("Section items: " + section.items)
+    var tempString = ""
+    var loadTemplate = function(callback){
+
+      tempString = loadHtmlString('section')
+      callback(tempString, {contents: section.items})
     }
-    toRender()
+    loadTemplate(Mustache.render) 
+    $('#'+ section.name + " .contents").html(sectionTemp())
   }
-  // loadSection(sections["EDA"])
+
   var loadAll = function(sectionsObj){
     for (var key in sectionsObj){
          console.log("This is a section being loaded: " + key)
-      loadSection(sectionsObj[key])
+      loadSection(sectionsObj['web'])
     }
   }
-  // loadAll(sections)
+  // loadAll({web:{}})
   
   var reveal = function(altered, keys){
     var adjusted = false
@@ -147,6 +132,7 @@ $(document).ready(function(){
         sections[key].display = true
       }
       if (adjusted == true){
+            console.log(secName)
         $('html, body')
           .animate({
             scrollTop: $('#' + secName).offset().top 
@@ -186,7 +172,7 @@ $(document).ready(function(){
   for (var key in sections) {
      createClickEvent(key, [key])
   }
-  createClickEvent('portfolio', ["js", "RpR"])
+  createClickEvent('portfolio', ["js", "RoR", "web"])
 
   function createClickEvent(target, keys){
     $('#' + target + '-link').on('click', function(){

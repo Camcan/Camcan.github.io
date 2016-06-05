@@ -80,7 +80,7 @@ $(document).ready(function(){
     $('#'+elementId).addClass(newClass)
   }
 
-  var loadHtmlString = function(template, details){
+  var loadHtmlString = function(template){
     $.get(("partials/" + template + '.html'), function(temp) {
       console.log("htmlString:", temp)
       return temp
@@ -91,7 +91,6 @@ $(document).ready(function(){
   var renderTemplate = function(htmlString, target) {
        console.log("We have a template:", template, "Some details:", details, "And a target:", target)
     var htmlString = loadHtmlString(template, details)
-  
     $('#'+ target).html(htmlString)
   }
 
@@ -141,42 +140,14 @@ $(document).ready(function(){
     }
   }
 
-  // $('#portfolio-link')
-  //   .click(function(){
-  //     var toAlter = []
-  //     console.log(toAlter)
-  //     var allPortfolio = function(){
-  //       var toReturn = false
-  //       for (var key in sections) {
-  //         if (key !== 'EDA' && sections[key].display == false){
-  //           console.log("No bueno")
-  //           toReturn = true 
-  //         } 
-  //       }
-  //       return toReturn
-  //     }
-  //     allPortfolio = allPortfolio()
-  //     console.log("It's " + allPortfolio)
-  //     for (var key in sections) {
-  //       if(key !== 'EDA'){
-  //         console.log(key)
-  //         sections[key].display = allPortfolio
-  //         toAlter = toAlter.concat([key])
-  //         console.log(toAlter)
-  //       }
-  //     }
-  //     reveal(sections, toAlter)
-  //     console.log("Oops I ran")
-  //   })
 
   for (var key in sections) {
      createClickEvent(key, [key])
   }
-  createClickEvent('portfolio', ["js", "RoR", "web"])
+  // createClickEvent('portfolio', ["js", "RoR", "web"])
 
   function createClickEvent(target, keys){
     $('#' + target + '-link').on('click', function(){
-  
       var toAdjust = sections
       function adjust(obj){
         for(var i in keys) {
@@ -192,6 +163,15 @@ $(document).ready(function(){
       reveal(toAdjust,  keys)
     })
   }
+
+  $('#EDA-link').on('click', function(){
+    var eda = $('#EDA')
+    if (eda.hasClass('hidden')) {
+      eda.removeClass('hidden')
+    } else {
+      eda.addClass('hidden')
+    }
+  })
 
 
 

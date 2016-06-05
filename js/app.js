@@ -90,7 +90,6 @@ $(document).ready(function(){
 
   var renderTemplate = function(htmlString, target) {
        console.log("We have a template:", template, "Some details:", details, "And a target:", target)
-    var htmlString = loadHtmlString(template, details)
     $('#'+ target).html(htmlString)
   }
 
@@ -174,8 +173,13 @@ $(document).ready(function(){
   })
 
 
-
-
+  var projectTemp = loadHtmlString('project')
+  showItem = function(item) {
+    var id = $(item).attr('id');
+    console.log(id)
+    
+    $('#content').html = projectTemp
+  }
 
 //==================================================
 

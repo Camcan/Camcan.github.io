@@ -1,0 +1,65 @@
+<h2 class="indent1" ng-click="go('/projects', 'Campbell_Hawkes.projects')">
+  			Portfolio: [
+  		<br>
+		</h2>
+  		<div id="portfolio" ng-controller="projectsController">
+  		<h2 class="indent2">
+	  		<a id="web-link" href="#" class="button hover-enlarge hover-shadow" ng-click="viewSection('web')">
+	  			'Static Websites'
+	  		</a>,<br>
+	  	</h2>
+  		<div id="web-portfolio" class="section inner-shadow collapse-hide" ng-show="selectedSections.includes('web')">
+  			<div class="contents">
+	  			<div class="items">
+	  				<div  class="item">
+						<a id="apex" href="http://apexart.github.io">
+					  		<img src="img/apex-screenshot.png" class="drop-shadow hover-color">
+					  	<h2 class="drop-shadow">Apex Art</h2>
+				  		</a>
+					</div>
+					<div  class="item">
+						<a href="./in-color.html">
+					  		<img src="img/old-site-screenshot.png" class="drop-shadow hover-color">
+					  	<h2 class="drop-shadow">Previous Site</h2>
+				  		</a>
+					</div>
+	  			</div>
+  			</div>
+  		</div>
+  		<h2 class="indent2">
+	  		<a id="RoR-link" href="#" class="button hover-enlarge hover-shadow" ng-click="viewSection('RoR')">
+	  			'Ruby on Rails'
+	  		</a>,<br>
+	  	</h2>
+	  	<div id="RoR-portfolio" class="section inner-shadow collapse-hide" ng-show="selectedSections.includes('RoR')">
+	  	<div class=contents>
+		  	<img class="transluscent"src="img/ruby-logo.png">
+		  	<div class="items">
+  				<div id="" class="item">
+  					<a href="">
+  						<img src="" class="drop-shadow hover-color">
+  					</a>
+  					<h2>
+  						Sorry, I'm yet to publish any of my Ruby-based projects.
+  					</h2>
+  				</div>
+				</div>
+  		</div> 
+  		</div>
+	  	<h2 class="indent2">
+	  		<a id="js-link" href="#" class="button hover-enlarge hover-shadow" ng-click="viewSection('node')">
+	  			'Node'
+	  		</a>,<br>
+  		</h2>
+  		<div id="js-portfolio" class="section inner-shadow collapse-hide" ng-show="selectedSections.includes('node')">
+  			<img class="transluscent"src="img/js-logo.png" class="">
+  			<div class="items">
+  				<div id="" class="item">
+  					<a href="">
+  						<img src="" class="drop-shadow hover-color">
+  					</a>
+  					<h2 class="drop-shadow">Sorry; I'm yet to publish any node.js projects</h2>
+  				</div>
+				</div>
+  		</div>
+		</div>

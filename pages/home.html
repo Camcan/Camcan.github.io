@@ -1,0 +1,165 @@
+<div id="home">
+	<h2>
+		{<br>
+	</h2>
+	<div id="profile" class="indent1">
+	<h2>
+		Description:
+	</h2>
+    <h3 id="desc" class="indent1"> 
+    	'A web developer based in Wellington, New Zealand. I am passionate about building a more open internet. Inquiries welcome.',<br>
+	</h3>
+	</div>
+		<h2 class="indent1">
+			Detail: 
+			<a id="CV-btn" ng-hide="onDesktop" href="pdf/CampbellHawkes-CV--23-5-16.pdf" class="button">
+				C.V.
+			</a>
+			<a id="CV-lb-btn" ng-show="onDesktop" ng-click="go('/cv', '.CV')"href="" class="button hover-enlarge drop-shadow">
+				C.V.
+			</a>,
+		</h2>
+		<h2 class="indent1">
+  		Training: <a id="EDA-link" href="#" class="button hover-enlarge drop-shadow" ng-click="toggle('showEDA')">Enspiral Dev Academy</a>,
+		</h2> 	
+		<div id="EDA" class="section inner-shadow collapse-hide" ng-show="showEDA">
+			<a href="http://devacademy.co.nz/">
+				<img id="EDA-flag" src="img/Dev-Academy-Flag.png" class="transluscent hover-enlarge"></a>
+		<div id="EDA-text">	
+			<p>
+				Enspiral Dev Academy had me immersed in an industry-like environment and introduced to tools, principals and industry best practise. Dev Academy places a strong focus on building real things with other people and learning new technologies. In course, I made heavy use of both Ruby and Javascript, but also used a wide range of other technologies or tools including Angular, Node.js and Ruby on Rails. Although we were code constantly there is a strong emphasis on ‘softer’ skills such as communication, self management and Agile principles. Dev Academy has played a significant role in my newfound passion for constructive feedback in fuelling growth of both myself and others.
+			<p>
+		</div>
+	</div>
+	<h2 class="indent1" ng-click="go('/projects', '.projects')">
+			Portfolio: {
+		<br>
+	</h2>
+		<div id="portfolio" ng-controller="projectsController">
+			<div ng-repeat="(section, items) in projects">
+				<h2></h2>
+	  		<h2 class="indent2">
+		  		<a href="#" class="button hover-enlarge hover-shadow" ng-click="viewSection(section)">
+		  			'{{section}}' : {<span ng-hide="selectedSections.includes(section)">...}</span>
+		  		</a><span ng-hide="selectedSections.includes(section)">,</span><br>
+		  	</h2>
+	  		<div class="section inner-shadow collapse-hide" ng-show="selectedSections.includes('{{section}}')">
+				<div ng-repeat="item in items track by $index" class="item">
+					<a id="apex" ng-click="viewSelected(projects[section][i])"
+					>
+					<!-- href="http://apexart.github.io" -->
+				  		<img src="{{item.imgs[0]}}" class="drop-shadow hover-color">
+				  	<h2>{{items[i].imgs[0]}}</h2>
+			  		</a>
+				</div>
+	  		</div>
+	  		<h2 class="indent2" ng-show="selectedSections.includes(section)">},</h2>
+  		</div>
+  		<!-- <h2 class="indent2">
+	  		<a id="RoR-link" href="#" class="button hover-enlarge hover-shadow" ng-click="viewSection('RoR')">
+	  			'Ruby on Rails' <span ng-hide="selectedSections.includes('RoR')">{...}</span>
+	  		</a>,<br>
+	  	</h2>
+	  	<div id="RoR-portfolio" class="section inner-shadow collapse-hide" ng-show="selectedSections.includes('RoR')">
+	  	<div class=contents>
+		  	<img class="transluscent"src="img/ruby-logo.png">
+		  	<div class="items">
+  				<div id="" class="item">
+  					<a href="">
+  						<img src="" class="drop-shadow hover-color">
+  					</a>
+  					<h2>
+  						Sorry, I'm yet to publish any of my Ruby-based projects.
+  					</h2>
+  				</div>
+				</div>
+  		</div> 
+  		</div>
+	  	<h2 class="indent2">
+	  		<a id="js-link" href="#" class="button hover-enlarge hover-shadow" ng-click="viewSection('node')">
+	  			'Node' <span ng-hide="selectedSections.includes('node')">{...}</span>
+	  		</a>,<br>
+  		</h2>
+  		<div id="js-portfolio" class="section inner-shadow collapse-hide" ng-show="selectedSections.includes('node')">
+  			<img class="transluscent"src="img/js-logo.png" class="">
+  			<div class="items">
+  				<div id="" class="item">
+  					<a href="">
+  						<img src="" class="drop-shadow hover-color">
+  					</a>
+  					<h2 class="drop-shadow">Sorry; I'm yet to publish any node.js projects</h2>
+  				</div>
+				</div>
+  		</div> -->
+	</div>
+	<h2 class="indent1">
+		},<br>
+	</h2>
+	<h2 class="indent1">
+		Contact: [<br><br>
+	</h2>
+	<div id="contact-buttons" class="">
+		<div class="contact-btn">
+			<a href="https://github.com/Camcan">
+				<i class="mdi mdi-github-circle hover-shadow hover-enlarge"></i>
+				<!-- <p>
+					github.com/Camcan
+				</p> -->
+			</a>
+			<h2>,</h2>
+		</div>
+		<div class="contact-btn">
+			<a href="https://nz.linkedin.com/in/campbell-hawkes-1b557210b">
+				<i class="mdi mdi-linkedin hover-shadow hover-enlarge"></i>
+				<!-- <p>
+					Connect on LinkedIn
+				</p> -->
+			</a>
+			<h2>,</h2>
+		</div>
+		<div class="contact-btn">
+			<a href="https://twitter.com/letters_to_cam">
+				<i class="mdi mdi-twitter hover-shadow hover-enlarge"></i>
+			<!-- 	<p>
+					@letters_to_cam
+				</p> -->
+			</a>
+			<h2>,</h2>
+		</div>
+		<div class="contact-btn">
+			<a href="tel:+64278418623" >
+				<i class="mdi mdi-cellphone-android  hover-shadow hover-enlarge"></i>
+				<!-- <p>
+					027 841 8623
+				</p> -->
+			</a>
+			<h2>,</h2>
+		</div>
+		<div class="contact-btn">
+			<a href="https://www.google.co.nz/maps/place/1a%2F40+Cuba+St,+Te+Aro,+Wellington+6011/@-41.298624,174.771453,14.46z/data=!4m7!1m4!3m3!1s0x6d38afd6e247d4e7:0x39b9010743acccb8!2s1a%2F40+Cuba+St,+Te+Aro,+Wellington+6011!3b1!3m1!1s0x6d38afd6e247d4e7:0x39b9010743acccb8?hl=en">
+				<i class="mdi mdi-map-marker  hover-shadow hover-enlarge"></i>
+				<!-- <p>
+					1a,<br>
+					40 Cuba Street<br>
+					Te Aro<br>
+					Wellington
+				</p> -->
+			</a>
+			<h2>,</h2>
+		</div>	
+		<div class="contact-btn ">
+			<a href="mailto:mr.campbell.hawkes@gmail.com" class="hover enlarge">
+				<i class="mdi mdi-email hover-shadow hover-enlarge"></i>
+				<!-- <p>
+					mr.campbell.hawkes@gmail.com
+				</p> -->
+			</a>
+		</div>
+	</div>
+	<h2 class="indent1">
+		]<br>
+	</h2>
+	<h2>
+	  	}
+	</h2>
+</div>

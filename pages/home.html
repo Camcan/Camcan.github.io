@@ -31,7 +31,7 @@
 			<p>
 		</div>
 	</div>
-	<h2 class="indent1" ng-click="go('/projects', '.projects')">
+	<h2 class="indent1" id="portfolio-link"ng-click="go('/projects', '.projects')">
 			Portfolio: {
 		<br>
 	</h2>
@@ -45,7 +45,7 @@
 		  	</h2>
 	  		<div class="section inner-shadow collapse-hide" ng-show="selectedSections.includes('{{section}}')">
 				<div ng-repeat="item in items track by $index" class="item">
-					<a id="apex" ng-click="viewSelected(projects[section][i])"
+					<a ng-click="select(item); go('projects/view', '.projects'+item.suffix)"
 					>
 					<!-- href="http://apexart.github.io" -->
 				  		<img src="{{item.imgs[0]}}" class="drop-shadow hover-color">
@@ -102,57 +102,57 @@
 		<div class="contact-btn">
 			<a href="https://github.com/Camcan">
 				<i class="mdi mdi-github-circle hover-shadow hover-enlarge"></i>
-				<!-- <p>
+				<p class="contact-detail">
 					github.com/Camcan
-				</p> -->
+				</p>
 			</a>
 			<h2>,</h2>
 		</div>
 		<div class="contact-btn">
 			<a href="https://nz.linkedin.com/in/campbell-hawkes-1b557210b">
 				<i class="mdi mdi-linkedin hover-shadow hover-enlarge"></i>
-				<!-- <p>
-					Connect on LinkedIn
-				</p> -->
+				<p class="contact-detail">
+					/nz/campbell-hawkes
+				</p>
 			</a>
 			<h2>,</h2>
 		</div>
 		<div class="contact-btn">
 			<a href="https://twitter.com/letters_to_cam">
 				<i class="mdi mdi-twitter hover-shadow hover-enlarge"></i>
-			<!-- 	<p>
+				<p class="contact-detail">
 					@letters_to_cam
-				</p> -->
+				</p>
 			</a>
 			<h2>,</h2>
 		</div>
 		<div class="contact-btn">
 			<a href="tel:+64278418623" >
 				<i class="mdi mdi-cellphone-android  hover-shadow hover-enlarge"></i>
-				<!-- <p>
+				<p class="contact-detail">
 					027 841 8623
-				</p> -->
+				</p>
 			</a>
 			<h2>,</h2>
 		</div>
 		<div class="contact-btn">
 			<a href="https://www.google.co.nz/maps/place/1a%2F40+Cuba+St,+Te+Aro,+Wellington+6011/@-41.298624,174.771453,14.46z/data=!4m7!1m4!3m3!1s0x6d38afd6e247d4e7:0x39b9010743acccb8!2s1a%2F40+Cuba+St,+Te+Aro,+Wellington+6011!3b1!3m1!1s0x6d38afd6e247d4e7:0x39b9010743acccb8?hl=en">
 				<i class="mdi mdi-map-marker  hover-shadow hover-enlarge"></i>
-				<!-- <p>
+				<p class="contact-detail">
 					1a,<br>
-					40 Cuba Street<br>
-					Te Aro<br>
+					40 Cuba Street,<br>
+					Te Aro,<br>
 					Wellington
-				</p> -->
+				</p>
 			</a>
 			<h2>,</h2>
 		</div>	
 		<div class="contact-btn ">
 			<a href="mailto:mr.campbell.hawkes@gmail.com" class="hover enlarge">
 				<i class="mdi mdi-email hover-shadow hover-enlarge"></i>
-				<!-- <p>
+				<p class="contact-detail">
 					mr.campbell.hawkes@gmail.com
-				</p> -->
+				</p>
 			</a>
 		</div>
 	</div>

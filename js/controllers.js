@@ -35,6 +35,7 @@ camcan.controller('mainController', function($scope, $location, TitleParser, Pro
 		$location.path(path)
 	}
 
+
 	$scope.showContent = false
 	var revealContent = function(){
 		$scope.showContent = true 
@@ -71,7 +72,6 @@ camcan.controller('mainController', function($scope, $location, TitleParser, Pro
 
 	$scope.pageOverlay = false
 	$scope.mobileMenu = false
-	$scope.selectedSection = {}
 	$scope.toggleMenu = function(){
 		if ($scope.mobileMenu == true){
 			console.log($scope.mobileMenu)
@@ -109,9 +109,9 @@ camcan.controller('projectsController', function($scope, $location, ProjectDatab
 			// PortfolioSelection.setTitle(title)
 			$location.path('projects')
 	}
-	$scope.viewSelected = function(item){
+	$scope.select = function(item){
 		PortfolioSelection.setItem(item)
 		console.log($scope.selectedItem)
-		$location.path('projects/view')
+		
 	}
 }) 

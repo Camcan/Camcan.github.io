@@ -30,33 +30,31 @@
   <div id="header">
     <div id="head-left">
       <h2 id="typed-title" class="indent" ng-bind="pageTitle" ng-click="go('/', '')"></h2>
-      <h2 id="return" ng-show="showContent" ng-cloak>=></h2>
+      <h3 id="return" ng-show="showContent" ng-cloak>=></h3>
     </div>
     <!-- <img id=profile-img src="img/Paris-Rooftop-Square.bmp" class="drop-shadow"> -->
   </div>
   <div id="content-loader" ng-show="transitionState">
     <svg version="1.1" 
-    class="svg-divider" 
-    xmlns="http://www.w3.org/2000/svg" 
-    xmlns:xlink="http://www.w3.org/1999/xlink" 
-    x="50px"
-    y="0px" 
-    viewBox="0 0 80 3"  
-    xml:space="preserve"
->
-    <rect 
-        x="1" 
+      class="svg-divider" 
+      xmlns="http://www.w3.org/2000/svg" 
+      xmlns:xlink="http://www.w3.org/1999/xlink" 
+      x="100px"
+      y="0px" 
+      viewBox="0 0 80 3"  
+      xml:space="preserve">
+      <rect 
+        x="30" 
         fill="#c6c3b9" 
         width="16" 
-        height=".2"
-    >
+        height=".2">
         <animate 
             attributeName="x" 
             attributeType="XML"
             values="1; 64; 1"
-        begin="0s" dur="0.5s" repeatCount="indefinite" />
-    </rect>
-</svg>
+            begin="0s" dur="0.5s" repeatCount="indefinite" />
+      </rect>
+    </svg>
   </div>
   <div id="content" ng-show="showContent" ng-cloak><div ng-view></div></div>
   <div id="footer" class="fade-transition show">

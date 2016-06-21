@@ -46,18 +46,40 @@ camcan.service('ProjectDatabase', function() {
     'Static Websites': [
 	    {
 	      title: 'Old Personal Site',
+	      suffix: '.old',
 	      desc: 'Basic front end interface using jQuery, HTML5 & CSS3',
 	       tech: ['jQuery'],
+	       link: {
+	       	src: 'http://camcan.github.io/old.html',
+	       	string: 'camcan.github.io/old'
+	       },
 	      imgs: ['img/old-site-screenshot.png']
 	    },
 	    {
 	      title: 'Apex Art',
+	      suffix: '.apex-art',
 	      desc: 'Profile site for designer Bella Cole',
 	       tech: ['Angular', 'Browserify'],
+	       link: {
+	       	src: 'http://apex-art.github.io',
+	       	string: 'apex-art.github.io'
+	       },
 	      imgs: ['img/apex-screenshot.png']
-	    }],
-		'Ruby on Rails': [],
-		'Node.js': []
+	    }
+	],
+	'EDA': [
+		{
+	      title: 'Book It',
+	      suffix: '.book-it',
+	      desc: 'This was an intensive project with MVP achieved within the one week timeframe given. Our entire team had their own stories of experiencing various forms of what we feel defines to "hell" while work in the hospitality industry. We were motivated, based on the understanding that bookings even in the most pristegious of establishments are often handled by voice-call, pen, & paper. BookIt is a workable concept that eliminates the seemingly limitless possibility of human error through a compact elegant yet succulent web-app. I worked together with Zachary Landes ( zacharylandes.github.io ) to create the client-facing interface of the service, which allows one to make bookings for specific numbers of people at their resteraunts of choice for a given timeframe, automating this entire process. Book It, because why talk to people. ',
+	      link: {
+	       	src: 'http://ruru-2015.github.io/book-it-client-frontend',
+	       	string: 'ruru-2015.github.io/book-it-client-frontend'
+	       },
+	       tech: ['Rails Backend', 'mySQL Database', 'Angular JS Front-End', 'Grunt'],
+	      imgs: ['img/bookit.jpg', 'img/screenshot-book-it.png']
+	    }
+	],
 	}
   var getProjects = function(){
 	  return projects

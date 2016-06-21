@@ -180,7 +180,7 @@
   #portfolio .section .item {
     margin: 20px;
     display: inline;
-    height: 300px;
+    height: 230px;
     width: 200px;
   }
   #portfolio .item p.tile-title {
@@ -189,8 +189,9 @@
     opacity: 0;
     height: 0px;
   }
-  #portfolio .item:hover {
-
+  #portfolio .item img:hover {
+    cursor: pointer;
+    cursor: hand;
   }
   #portfolio .item:hover p.tile-title{
     color: black;

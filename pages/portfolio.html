@@ -1,65 +1,26 @@
-<h2 class="indent1" ng-click="go('/projects', 'Campbell_Hawkes.projects')">
-  			Portfolio: [
-  		<br>
-		</h2>
-  		<div id="portfolio" ng-controller="projectsController">
+<h2 id="portfolio-link"ng-click="go('/projects', '.projects')">
+			Projects: {
+		<br>
+</h2>
+<div id="portfolio" ng-controller="projectsController">
+	<div ng-repeat="(section, items) in projects">
+		<h2></h2>
   		<h2 class="indent2">
-	  		<a id="web-link" href="#" class="button hover-enlarge hover-shadow" ng-click="viewSection('web')">
-	  			'Static Websites'
-	  		</a>,<br>
+	  		<a href="" class="button hover-enlarge hover-shadow" ng-click="viewSection(section)">
+	  			'{{section}}' : {<span ng-hide="selectedSections.includes(section)">...}</span>
+	  		</a><span ng-hide="selectedSections.includes(section)">,</span><br>
 	  	</h2>
-  		<div id="web-portfolio" class="section inner-shadow collapse-hide" ng-show="selectedSections.includes('web')">
-  			<div class="contents">
-	  			<div class="items">
-	  				<div  class="item">
-						<a id="apex" href="http://apexart.github.io">
-					  		<img src="img/apex-screenshot.png" class="drop-shadow hover-color">
-					  	<h2 class="drop-shadow">Apex Art</h2>
-				  		</a>
-					</div>
-					<div  class="item">
-						<a href="./in-color.html">
-					  		<img src="img/old-site-screenshot.png" class="drop-shadow hover-color">
-					  	<h2 class="drop-shadow">Previous Site</h2>
-				  		</a>
-					</div>
-	  			</div>
-  			</div>
+  		<div class="section inner-shadow collapse-hide" ng-show="selectedSections.includes('{{section}}')">
+			<div ng-repeat="item in items track by $index" class="item">
+				<a ng-click="select(item); go('projects/view', '.projects'+item.suffix)"
+				>
+				<!-- href="http://apexart.github.io" -->
+			  		<img src="{{item.imgs[0]}}" class="drop-shadow hover-color">
+		  		</a>
+			  	<p class="tile-title">{{item.title}}</p>
+			</div>
   		</div>
-  		<h2 class="indent2">
-	  		<a id="RoR-link" href="#" class="button hover-enlarge hover-shadow" ng-click="viewSection('RoR')">
-	  			'Ruby on Rails'
-	  		</a>,<br>
-	  	</h2>
-	  	<div id="RoR-portfolio" class="section inner-shadow collapse-hide" ng-show="selectedSections.includes('RoR')">
-	  	<div class=contents>
-		  	<img class="transluscent"src="img/ruby-logo.png">
-		  	<div class="items">
-  				<div id="" class="item">
-  					<a href="">
-  						<img src="" class="drop-shadow hover-color">
-  					</a>
-  					<h2>
-  						Sorry, I'm yet to publish any of my Ruby-based projects.
-  					</h2>
-  				</div>
-				</div>
-  		</div> 
-  		</div>
-	  	<h2 class="indent2">
-	  		<a id="js-link" href="#" class="button hover-enlarge hover-shadow" ng-click="viewSection('node')">
-	  			'Node'
-	  		</a>,<br>
-  		</h2>
-  		<div id="js-portfolio" class="section inner-shadow collapse-hide" ng-show="selectedSections.includes('node')">
-  			<img class="transluscent"src="img/js-logo.png" class="">
-  			<div class="items">
-  				<div id="" class="item">
-  					<a href="">
-  						<img src="" class="drop-shadow hover-color">
-  					</a>
-  					<h2 class="drop-shadow">Sorry; I'm yet to publish any node.js projects</h2>
-  				</div>
-				</div>
-  		</div>
-		</div>
+  		<h2 class="indent2" ng-show="selectedSections.includes(section)">},</h2>
+  	</div>
+</div>
+<h2>}</h2>

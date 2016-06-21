@@ -107,7 +107,6 @@ camcan.controller('projectsController', function($scope, $location, ProjectDatab
 			console.log(section)
 			PortfolioSelection.setSections(section)
 			// PortfolioSelection.setTitle(title)
-			$location.path('projects')
 	}
 	$scope.select = function(item){
 		PortfolioSelection.setItem(item)

@@ -49,20 +49,17 @@
     height: 100%;
     z-index: 1;
     background-size: 200px 200px;
-    background: url(../img/bunny-white.png) no-repeat black;
+    background: black;
   }
   #page-overlay.ng-hide {
      transition: opacity 0.4s;
     opacity:0;
   } 
-  /*
-  .ng-show-add {
-    transition:opacity 2s;
-    opacity:1;
-  }*/
+
   .indent1 {
     margin-left: 5%;
   }
+
   .indent2 {
     margin-left: 10%;
   }
@@ -76,7 +73,6 @@
   }
 
   #typed-title {
-
     cursor: pointer;
     cursor: hand;
     margin-top: 30px;
@@ -187,6 +183,20 @@
     height: 300px;
     width: 200px;
   }
+  #portfolio .item p.tile-title {
+    -webkit-transition: height 0.4s, opacity 0.4s;
+    transition: height 0.4s, opacity 0.4s;
+    opacity: 0;
+    height: 0px;
+  }
+  #portfolio .item:hover {
+
+  }
+  #portfolio .item:hover p.tile-title{
+    color: black;
+    height: 30px;
+    opacity: 1;
+  }
 
   .item img {
     max-height: 200px;
@@ -250,9 +260,11 @@
     display: inline-flex;
     text-align: center;
   }
+
   .contact-btn i {
     font-size: 30px;
   }
+
   .contact-btn p {
     -webkit-transition: height 0.4s, opacity 0.4s;
     transition: height 0.4s, opacity 0.4s;
@@ -261,13 +273,12 @@
     width: 0px;
     visibility: hidden;
   }
+
   .contact-btn:hover p.contact-detail{
     color: white;
-    height: 30px;
+    height: 0px;
     opacity: 1;
     visibility: visible;
-  }
-
   }
 
   #footer .footer-buttons {
@@ -277,7 +288,6 @@
     min-height: 50px;
     display: flex;
     justify-content: space-around;
-
   }
   
   #footer h3 {

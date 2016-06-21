@@ -247,6 +247,11 @@
     display: inline-block;
   }
 
+  #CV-lightbox h2 {
+    background-color: blue;
+    padding: 20px;
+  }
+
   #EDA-link {
     margin-left: 20px;
     color: yellow;

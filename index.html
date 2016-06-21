@@ -1,203 +1,64 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html ng-app="apex">
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>> This is Cam</title>
 
-    <link rel="shortcut icon" href="img/favicon.ico">
-    <link href="css/normalize.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,400italic' rel='stylesheet' type='text/css'>
-    <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
-    <link href="css/home.css" rel="stylesheet">
-    <script src="js/jquery-2.2.0.js"></script>
-    <script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
-    <script src="node_modules/mostache/mostache.min.js"></script>
-    <script src="js/app.js"></script>
+  <title>~$ This is Cam</title>
 
-   </head>
-   
-   <body>
-    <div id="page-overlay">
-     <div id="CV-lightbox">
-        <h2> Nothing here? You can find the file by following<a href="pdf/CampbellHawkes-CV--23-5-16.pdf"> this link</a>.</h2>
-        <iframe src="pdf/CampbellHawkes-CV--23-5-16.pdf" type:"application/pdf">
-        </iframe>
-      </div>
+  <link rel="shortcut icon" href="img/favicon.ico">
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,400italic' rel='stylesheet' type='text/css'>
+  <link href="css/normalize.css" rel="stylesheet">
+  <!-- Custom -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/desktop.css">
+  <!-- Material Design -->
+  <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
+  <script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
+  <!-- Angular -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-animate.js"></script>
+
+  <script src="js/routes.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/services.js"></script>
+  <!-- <script src="js/app.js"></script> -->
+</head>
+<body ng-controller="mainController">
+  <div id="header">
+    <div id="head-left">
+      <h2 id="typed-title" class="indent" ng-bind="pageTitle" ng-click="go('/', '')"></h2>
+      <h3 id="return" ng-show="showContent" ng-cloak>=></h3>
     </div>
-	<div id="header">
-		<div id="head-left">
-	    	<div id="typed-title" class="indent"></div>
-	    	<h2 id="return">=></h2>
-	    </div>
-    	<img id=profile-img src="img/Paris-Rooftop-Square.bmp" class="drop-shadow">
-    </div>
-    <div id="content" class="indent">
-    	<div>
-	    	<h2>
-	    		{<br>
-	    	</h2>
-	    	<div id="profile" class="indent1">
-	    	<h2>
-	    		Description:
-	    	</h2>
-		    <h2 id="desc"> 
-		    	'A web developer based in Wellington, New Zealand. I am passionate about building a more open internet. Inquiries welcome.',<br>
-	    	</h2>
-	    	</div>
-	  		<h2 class="indent1">
-	  			Detail: 
-	  			<a id="CV-btn" href="pdf/CampbellHawkes-CV--23-5-16.pdf" class="button">
-	  				C.V.
-	  			</a>
-	  			<a id="CV-lb-btn" href="#" class="button hover-enlarge drop-shadow">
-	  				C.V.
-	  			</a>,
-	  		</h2>
-	  		<h2 class="indent1">
-		  		Training: <a id="EDA-link"href="#" class="button hover-enlarge drop-shadow">Enspiral Dev Academy</a>,
-	  		</h2> 	
-	  		<div id="EDA" class="section inner-shadow collapse-hide hidden">
-	  			<a href="http://devacademy.co.nz/">
-	  				<img id="EDA-flag" src="img/Dev-Academy-Flag.png" class="transluscent hover-enlarge"></a>
-				<div id="EDA-text">	
-					<h3>
-						Enspiral Dev Academy had me immersed in an industry-like environment and introduced to tools, principals and industry best practise. Dev Academy places a strong focus on building real things with other people and learning new technologies. In course, I made heavy use of both Ruby and Javascript, but also used a wide range of other technologies or tools including Angular, Node.js and Ruby on Rails. Although we were code constantly there is a strong emphasis on ‘softer’ skills such as communication, self management and Agile principles. Dev Academy has played a significant role in my newfound passion for constructive feedback in fuelling growth of both myself and others.
-					<h3>
-				</div>
-			</div>
-	  		<h2 class="indent1">
-		  			Portfolio: [
-		  		<br>
-	  		</h2>
-	  		<h2 class="indent2">
-		  		<a id="web-link" href="#" class="button hover-enlarge hover-shadow">
-		  			'Static Websites'
-		  		</a>,<br>
-		  	</h2>
-	  		<div id="web-portfolio" class="section inner-shadow collapse-hide hidden">
-	  			<div class="contents">
-		  			<div class="items">
-		  				<div  class="item">
-							<a id="apex" href="http://apexart.github.io">
-						  		<img src="img/apex-screenshot.png" class="drop-shadow hover-color">
-						  	<h2 class="drop-shadow">Apex Art</h2>
-					  		</a>
-						</div>
-						<div  class="item">
-							<a href="./in-color.html">
-						  		<img src="img/old-site-screenshot.png" class="drop-shadow hover-color">
-						  	<h2 class="drop-shadow">Previous Site</h2>
-					  		</a>
-						</div>
-		  			</div>
-	  			</div>
-	  		</div>
-	  		<h2 class="indent2">
-		  		<a id="RoR-link" href="#" class="button hover-enlarge hover-shadow">
-		  			'Ruby on Rails'
-		  		</a>,<br>
-		  	</h2>
-		  	<div id="RoR-portfolio" class="section inner-shadow collapse-hide hidden">
-		  	<div class=contents>
-			  	<img class="transluscent"src="img/ruby-logo.png">
-			  	<div class="items">
-	  				<div id="" class="item">
-	  					<a href="">
-	  						<img src="" class="drop-shadow hover-color">
-	  					</a>
-	  					<h2>
-	  						Sorry, I'm yet to publish any of my Ruby-based projects.
-	  					</h2>
-	  				</div>
-  				</div>
-	  		</div> 
-	  		</div>
-		  	<h2 class="indent2">
-		  		<a id="js-link" href="#" class="button hover-enlarge hover-shadow" >
-		  			'Node'
-		  		</a>,<br>
-	  		</h2>
-	  		<div id="js-portfolio" class="section inner-shadow collapse-hide hidden">
-	  			<img class="transluscent"src="img/js-logo.png" class="">
-	  			<div class="items">
-	  				<div id="" class="item">
-	  					<a href="">
-	  						<img src="" class="drop-shadow hover-color">
-	  					</a>
-	  					<h2 class="drop-shadow">Sorry; I'm yet to publish any node.js projects</h2>
-	  				</div>
-  				</div>
-	  		</div>
-			<h2 class="indent1">
-				],<br>
-				Contact: [<br><br>
-			</h2>
-			<div id="contact-buttons" class="">
-				<div class="contact-btn">
-					<a href="https://github.com/Camcan">
-						<i class="mdi mdi-github-circle hover-shadow hover-enlarge"></i>
-						<!-- <p>
-							github.com/Camcan
-						</p> -->
-					</a>
-				</div>
-				<h2>,</h2>
-				<div class="contact-btn">
-					<a href="https://nz.linkedin.com/in/campbell-hawkes-1b557210b">
-						<i class="mdi mdi-linkedin hover-shadow hover-enlarge"></i>
-						<!-- <p>
-							Connect on LinkedIn
-						</p> -->
-					</a>
-				</div>
-				<h2>,</h2>
-				<div class="contact-btn">
-					<a href="https://twitter.com/letters_to_cam">
-						<i class="mdi mdi-twitter hover-shadow hover-enlarge"></i>
-					<!-- 	<p>
-							@letters_to_cam
-						</p> -->
-					</a>
-				</div>
-				<h2>,</h2>
-				<div class="contact-btn">
-					<a href="tel:+64278418623" >
-						<i class="mdi mdi-cellphone-android  hover-shadow hover-enlarge"></i>
-						<!-- <p>
-							027 841 8623
-						</p> -->
-					</a>
-				</div>
-				<h2>,</h2>
-				<div class="contact-btn">
-					<a href="https://www.google.co.nz/maps/place/1a%2F40+Cuba+St,+Te+Aro,+Wellington+6011/@-41.298624,174.771453,14.46z/data=!4m7!1m4!3m3!1s0x6d38afd6e247d4e7:0x39b9010743acccb8!2s1a%2F40+Cuba+St,+Te+Aro,+Wellington+6011!3b1!3m1!1s0x6d38afd6e247d4e7:0x39b9010743acccb8?hl=en">
-						<i class="mdi mdi-map-marker  hover-shadow hover-enlarge"></i>
-						<!-- <p>
-							1a,<br>
-							40 Cuba Street<br>
-							Te Aro<br>
-							Wellington
-						</p> -->
-					</a>
-				</div>	
-				<h2>,</h2>
-				<div class="contact-btn ">
-					<a href="mailto:mr.campbell.hawkes@gmail.com" class="hover enlarge">
-						<i class="mdi mdi-email hover-shadow hover-enlarge"></i>
-						<!-- <p>
-							mr.campbell.hawkes@gmail.com
-						</p> -->
-					</a>
-				</div>
-			</div>
-			<h2 class="indent1">
-				]<br>
-			</h2>
-			<h2>
-			  	}
-			</h2>
-    	</div>
-    </div>
-  </body>
+    <!-- <img id=profile-img src="img/Paris-Rooftop-Square.bmp" class="drop-shadow"> -->
+  </div>
+  <div id="content-loader" ng-show="transitionState">
+    <svg version="1.1" 
+      class="svg-divider" 
+      xmlns="http://www.w3.org/2000/svg" 
+      xmlns:xlink="http://www.w3.org/1999/xlink" 
+      x="100px"
+      y="0px" 
+      viewBox="0 0 80 3"  
+      xml:space="preserve">
+      <rect 
+        x="30" 
+        fill="#c6c3b9" 
+        width="16" 
+        height=".2">
+        <animate 
+            attributeName="x" 
+            attributeType="XML"
+            values="1; 64; 1"
+            begin="0s" dur="0.5s" repeatCount="indefinite" />
+      </rect>
+    </svg>
+  </div>
+  <div id="content" ng-show="showContent" ng-cloak><div ng-view></div></div>
+  <div id="footer" class="fade-transition show">
+    <h3>© Campbell Hawkes, 2016</h3>
+  </div>
+</body>
 </html>

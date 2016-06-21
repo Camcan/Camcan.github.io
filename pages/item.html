@@ -1,0 +1,16 @@
+<h2>{</h2>
+<h2 class="item-title">
+	{{selectedItem.title}}
+</h2>
+<div class="project-view"> 
+	<div class="left-half">
+		<h3 class="hover-enlarge"><a href="{{selectedItem.link.src}}">{{selectedItem.link.string}}</a></h3>
+		<p>{{selectedItem.desc}}</p>
+		<p>tech:</p>
+		<h3 ng-repeat="tech in selectedItem.tech">{{tech}}<i class="mdi mdi-subdirectory-arrow-left"></i></h3>
+	</div>
+	<div class="right-half">
+		<img ng-repeat="url in selectedItem.imgs"src="{{url}}">
+	</div> 
+</div>
+<h2>}</h2>

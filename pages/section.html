@@ -1,0 +1,20 @@
+<div class="template {{transitionState}}">
+		<div ng-click="back('art')" class="back-btn">
+		  	<svg style="width:50px;height:50px" viewBox="0 0 50 50">
+			    <path fill="#000000" d="M21,11H6.83L10.41,7.41L9,6L3,12L9,18L10.41,16.58L6.83,13H21V11Z" />
+			</svg>
+		</div>
+		<h2 class="title">{{pageTitle}}</h2>
+	<div id="portfolio" class="">
+		<div ng-repeat="section in projects" ng-show=""
+			<div ng-repeat="singleWork in section" class="item hover-enlarge">
+				  	<a ng-click="viewSelected(singleWork)" href="" class="">
+				  		<img ng-src="{{singleWork.imgs[0]}}" class="drop-shadow">
+				  		<p class="title">{{singleWork.title}},</br>
+				  		{{singleWork.desc}}
+				  		</p>
+				  	</a>
+			</div> 
+		</div>
+	</div>
+</div>

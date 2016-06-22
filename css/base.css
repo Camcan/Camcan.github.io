@@ -216,7 +216,7 @@
   .left-half {
     text-align: right;
     width: 300px;
-    margin: 5%;
+    margin: 2% 5% 5% 5%;
     padding: 20px;
     min-width: 40%;
     color: black;
@@ -229,12 +229,12 @@
   .left-half a:hover {
     color: gray;
   }
-  .left-half p {
-    padding: 20px;
-    text-align: left;
+  .left-half .desc{
+    padding-top: 20px;
+    text-align: center;
   }
   .right-half {
-    margin: 5%;
+    margin: 2% 5% 5% 5%;
     width: 300px;
     min-width: 40%;
     height: 450px;

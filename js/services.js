@@ -69,9 +69,10 @@ camcan.service('ProjectDatabase', function() {
 	],
 	'EDA': [
 		{
-	      title: 'Book It; because why talk to people?',
+	      title: 'Book It',
+	      subtitle: 'Because why talk to people?',
 	      suffix: '.book-it',
-	      desc: 'This was an intensive project with MVP achieved within the one week timeframe given. Our entire team had their own stories of experiencing various forms of what we feel defines to "hell" while work in the hospitality industry. We were motivated, based on the understanding that bookings even in the most pristegious of establishments are often handled by voice-call, pen, & paper. BookIt is a workable concept that eliminates the seemingly limitless possibility of human error through a compact elegant yet succulent web-app. I worked together with Zachary Landes ( zacharylandes.github.io ) to create the client-facing interface of the service, which allows one to make bookings for specific numbers of people at their resteraunts of choice for a given timeframe, automating this entire process. Book It, because why talk to people. ',
+	      desc: 'This was an intensive project with MVP achieved within the one week timeframe given. Our entire team had their own experiences of "hell" while work in the hospitality industry. We were motivated by our understanding that bookings, even in the most pristegious of establishments, are often handled by voice-call, pen, & paper. BookIt is a workable concept that eliminates the seemingly limitless possibility of human error through a compact elegant yet succulent web-app. I worked together with Zachary Landes ( zacharylandes.github.io ) to create the client-facing interface of the service, which allows one to make bookings for specific numbers of people at their resteraunts of choice for a given timeframe, automating this entire process. Book It, because why talk to people. ',
 	      link: {
 	       	src: 'http://ruru-2015.github.io/book-it-client-frontend',
 	       	string: 'ruru-2015.github.io/book-it-client-frontend'

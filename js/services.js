@@ -50,7 +50,7 @@ camcan.service('ProjectDatabase', function() {
 	      desc: 'Basic front end interface using jQuery, HTML5 & CSS3',
 	       tech: ['jQuery'],
 	       link: {
-	       	src: 'http://camcan.github.io/old.html',
+	       	src: 'http://camcan.github.io/in-color.html',
 	       	string: 'camcan.github.io/old'
 	       },
 	      imgs: ['img/old-site-screenshot.png']

@@ -17,7 +17,7 @@
       background-size: cover;
       color: #eee;
       -webkit-font-smoothing: antialiased;
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Roboto Mono', monospace;
       font-size: 20px;
       height: 100%;
       text-rendering: optimizeLegibility;

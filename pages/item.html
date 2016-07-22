@@ -2,15 +2,21 @@
 <h2 class="item-title">
 	{{selectedItem.title}}
 </h2>
+<h3 class="item-title">
+	{{selectedItem.subtitle}}
+</h3>
 <div class="project-view"> 
 	<div class="left-half">
 		<h3 class="hover-enlarge"><a href="{{selectedItem.link.src}}">{{selectedItem.link.string}}</a></h3>
-		<p>{{selectedItem.desc}}</p>
-		<p>tech:</p>
-		<h3 ng-repeat="tech in selectedItem.tech">{{tech}}<i class="mdi mdi-subdirectory-arrow-left"></i></h3>
+		<p class="desc">{{selectedItem.desc}}</p>
+		<div id="tech">
+			<p>tech:    [</p>
+			<h3 ng-repeat="tech in selectedItem.tech">{{tech}} <i class="mdi mdi-adjust"></i></h3>
+			<p>]</p>
+		</div>
 	</div>
 	<div class="right-half">
-		<img ng-repeat="url in selectedItem.imgs"src="{{url}}">
+		<img ng-repeat="url in selectedItem.imgs"src="{{url}}" ng-hide="(url == selectedItem.imgs[0])">
 	</div> 
 </div>
 <h2>}</h2>

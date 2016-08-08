@@ -1,7 +1,13 @@
 @media screen and (min-width: 650px) {
-  
-  .hover-enlarge {
+  a {
+    color: #eee;
+  }
 
+  a:hover {
+    color: yellow;
+  }
+
+  .hover-enlarge {
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -ms-transform: scale(1);
@@ -9,6 +15,13 @@
     -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
     -moz-transition: -moz-transform 0.2s, opacity 0.2s;
     transition: transform 0.2s, opacity 0.2s;
+  }
+  .contact-btn:hover p.contact-detail{
+    color: white;
+    height: 0px;
+    opacity: 1;
+    white-space: nowrap;
+    visibility: visible;
   }
 
   .hover-enlarge:hover {

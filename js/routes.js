@@ -1,4 +1,4 @@
-var camcan = angular.module('apex', ['ngRoute', 'ngAnimate'])
+var camcan = angular.module('camcan', ['ngRoute', 'ngAnimate'])
 
 camcan.config(function($routeProvider) {
 	$routeProvider

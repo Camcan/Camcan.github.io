@@ -10,6 +10,7 @@
 
   body {
       /*background: url(../img/b&w-scratch-texture.bmp) no-repeat center center fixed; */
+      height: 100%;
       background:black;
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -18,8 +19,8 @@
       color: #eee;
       -webkit-font-smoothing: antialiased;
       font-family: 'Roboto Mono', monospace;
-      font-size: 20px;
-      height: 100%;
+      font-size: 1rem;
+      font-style: normal;
       text-rendering: optimizeLegibility;
   }
 
@@ -29,11 +30,8 @@
   }
 
   a {
-    color: #eee;
-    text-decoration: none;
-  }
-  a:hover {
     color: yellow;
+    text-decoration: none;
   }
 
   a .open {
@@ -76,7 +74,7 @@
     cursor: pointer;
     cursor: hand;
     margin-top: 30px;
-    height: 50px;
+    min-height: 50px;
     width: 100%;
     display: flex;
   }
@@ -275,12 +273,6 @@
     visibility: hidden;
   }
 
-  .contact-btn:hover p.contact-detail{
-    color: white;
-    height: 0px;
-    opacity: 1;
-    visibility: visible;
-  }
 
   #footer .footer-buttons {
     margin-top: 10px;

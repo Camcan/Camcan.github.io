@@ -48,23 +48,23 @@ camcan.service('ProjectDatabase', function() {
 	      title: 'Old Personal Site',
 	      suffix: '.old',
 	      desc: 'Basic front end interface using jQuery, HTML5 & CSS3',
-	       tech: ['jQuery'],
+	       tech: ['jQuery', 'HTML5', 'CSS3'],
 	       link: {
 	       	src: 'http://camcan.github.io/in-color.html',
 	       	string: 'camcan.github.io/old'
 	       },
-	      imgs: ['img/old-site-screenshot.png']
+	      imgs: ['img/old-site-screenshot.png', 'img/old-site-screenshot.png']
 	    },
 	    {
 	      title: 'Apex Art',
 	      suffix: '.apex-art',
-	      desc: 'Profile site for designer Bella Cole',
-	       tech: ['Angular', 'Browserify'],
+	      desc: 'Mobile-first portfolio site for designer Bella Cole. 	This is still in development.',
+	       tech: ['Angular', 'Browserify', 'HTML5', 'CSS3'],
 	       link: {
 	       	src: 'http://apex-art.github.io',
 	       	string: 'apex-art.github.io'
 	       },
-	      imgs: ['img/apex-screenshot.png']
+	      imgs: ['img/apex-screenshot.png', 'img/apex-screenshot-desktop.jpg', 'img/apex-screenshot-mobile-menu.jpg']
 	    }
 	],
 	'EDA': [

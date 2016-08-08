@@ -64,7 +64,7 @@ camcan.service('ProjectDatabase', function() {
 	       	src: 'http://apex-art.github.io',
 	       	string: 'apex-art.github.io'
 	       },
-	      imgs: ['img/apex-screenshot.png', 'img/apex-screenshot-desktop.jpg', 'img/apex-screenshot-mobile-menu.jpg']
+	      imgs: ['img/apex-screenshot.png', 'img/apex-screenshot-desktop.jpg', 'img/apex-mobile-menu.jpg', 'img/apex-mobile-home.jpg']
 	    }
 	],
 	'EDA': [

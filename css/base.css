@@ -229,7 +229,8 @@
   }
   .left-half .desc{
     padding-top: 20px;
-    text-align: center;
+    padding-bottom: 20px;
+    text-align: left;
   }
   .right-half {
     margin: 2% 5% 5% 5%;

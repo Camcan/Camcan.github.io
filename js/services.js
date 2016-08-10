@@ -61,8 +61,8 @@ camcan.service('ProjectDatabase', function() {
 	      desc: 'Mobile-first portfolio site for designer Bella Cole. 	This is still in development.',
 	       tech: ['Angular', 'Browserify', 'HTML5', 'CSS3'],
 	       link: {
-	       	src: 'http://apex-art.github.io',
-	       	string: 'apex-art.github.io'
+	       	src: 'http://apexart.github.io',
+	       	string: 'apexart.github.io'
 	       },
 	      imgs: ['img/apex-screenshot.png', 'img/apex-screenshot-desktop.jpg', 'img/apex-mobile-home.jpg', 'img/apex-mobile-menu.jpg']
 	    }

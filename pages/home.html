@@ -31,33 +31,9 @@
 			<p>
 		</div>
 	</div>
-	<h2 class="indent1" id="portfolio-link"ng-click="go('/projects', '.projects')">
-			Projects: {
+	<h2 class="indent1" id="portfolio-link">
+			Projects: <a ng-click="go('/projects', '.projects')"> {...}</a> ,
 		<br>
-	</h2>
-		<div id="portfolio" ng-controller="projectsController">
-			<div ng-repeat="(section, items) in projects">
-				<h2></h2>
-	  			<h2 class="indent2">
-		  		<a href="#" class="button hover-enlarge hover-shadow" ng-click="viewSection(section)">
-		  			'{{section}}' : {<span ng-hide="selectedSections.includes(section)">...}</span>
-		  		</a><span ng-hide="selectedSections.includes(section)">,</span><br>
-		  	</h2>
-	  		<div class="section inner-shadow collapse-hide" ng-show="selectedSections.includes('{{section}}')">
-				<div ng-repeat="item in items track by $index" class="item">
-					<a ng-click="select(item); go('projects/view', '.projects'+item.suffix)"
-					>
-					<!-- href="http://apexart.github.io" -->
-				  		<img src="{{item.imgs[0]}}" class="drop-shadow hover-color">
-			  		</a>
-				  	<p class="tile-title">{{item.title}}</p>
-				</div>
-	  		</div>
-	  		<h2 class="indent2" ng-show="selectedSections.includes(section)">},</h2>
-	  	</div>
-	</div>
-	<h2 class="indent1">
-		},<br>
 	</h2>
 	<h2 class="indent1">
 		Contact: [<br><br>
@@ -99,18 +75,6 @@
 			</a>
 			<h2>,</h2>
 		</div>
-		<div class="contact-btn">
-			<a href="https://www.google.co.nz/maps/place/1a%2F40+Cuba+St,+Te+Aro,+Wellington+6011/@-41.298624,174.771453,14.46z/data=!4m7!1m4!3m3!1s0x6d38afd6e247d4e7:0x39b9010743acccb8!2s1a%2F40+Cuba+St,+Te+Aro,+Wellington+6011!3b1!3m1!1s0x6d38afd6e247d4e7:0x39b9010743acccb8?hl=en">
-				<i class="mdi mdi-map-marker  hover-shadow hover-enlarge"></i>
-				<p class="contact-detail">
-					1a,<br>
-					40 Cuba Street,<br>
-					Te Aro,<br>
-					Wellington
-				</p>
-			</a>
-			<h2>,</h2>
-		</div>	
 		<div class="contact-btn ">
 			<a href="mailto:mr.campbell.hawkes@gmail.com" class="hover enlarge">
 				<i class="mdi mdi-email hover-shadow hover-enlarge"></i>

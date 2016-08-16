@@ -67,7 +67,7 @@ camcan.service('ProjectDatabase', function() {
 	      imgs: ['img/apex-screenshot.png', 'img/apex-screenshot-desktop.jpg', 'img/apex-mobile-home.jpg', 'img/apex-mobile-menu.jpg']
 	    }
 	],
-	'EDA': [
+	'Dev Academy BootCamp': [
 		{
 	      title: 'Book It',
 	      subtitle: 'Because why talk to people?',

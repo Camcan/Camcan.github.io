@@ -41,7 +41,6 @@ camcan.controller('mainController', function($scope, $location, TitleParser, Pro
 		$scope.showContent = true 
 		$scope.$apply()
 	} 
-	$scope.showEDA = false
 	$scope.toggle = function(thing){
 		if ($scope[thing] == false){
 			$scope[thing] = true
